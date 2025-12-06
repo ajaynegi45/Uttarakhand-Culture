@@ -44,14 +44,15 @@ export default function Navbar() {
 
     const navLinks = [
         {name: "Home", href: "/"},
-        {name: "About", href: "/about"},
+
         {name: "Explore", href: "/explore"},
         {name: "Districts", href: "/explore/districts"},
-        {name: "Rulers", href: "/explore/rulers"},
-        {name: "Recipes", href: "/explore/recipes"},
-        {name: "Temples", href: "/explore/temples"},
+        // {name: "Rulers", href: "/explore/rulers"},
+        // {name: "Recipes", href: "/explore/recipes"},
+        // {name: "Temples", href: "/explore/temples"},
+        {name: "About", href: "/about"},
         {name: "Support", href: "/about/support"},
-        {name: "Contribute", href: "/about/contribute"},
+        // {name: "Contribute", href: "/about/contribute"},
     ];
 
     return (
@@ -60,7 +61,7 @@ export default function Navbar() {
                 className={cn(
                     "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-2 py-4",
                     isScrolled || !isHome || isMobileMenuOpen
-                        ? "bg-white/10 backdrop-blur-md border-b border-white/20 shadow-lg py-3 text-foreground"
+                        ? "bg-background/90 backdrop-blur-md border-b border-white/20 shadow-lg py-3 text-foreground"
                             : "bg-transparent text-white"
                 )}
             >

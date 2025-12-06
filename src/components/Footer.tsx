@@ -1,4 +1,5 @@
 import {Heart, Instagram, Linkedin, Mountain, Twitter,} from "lucide-react";
+import Link from "next/link";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -36,20 +37,37 @@ export default function Footer() {
                 <div>
                     <h3 className="font-serif text-lg font-bold mb-6 text-accent">Explore</h3>
                     <ul className="space-y-4 text-white/70">
-                        <li><a href="#" className="hover:text-white transition-colors">Heritage & History</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">Folk Tales</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">Spiritual Sites</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">Cuisine</a></li>
+                        {/*<li><Link href="#" className="hover:text-white transition-colors">Heritage & History</Link></li>*/}
+                        {/*<li><Link href="#" className="hover:text-white transition-colors">Folk Tales</Link></li>*/}
+                        {/*<li><Link href="#" className="hover:text-white transition-colors">Spiritual Sites</Link></li>*/}
+                        {/*<li><Link href="#" className="hover:text-white transition-colors">Cuisine</Link></li>*/}
+
+                        <li><Link href="/explore/districts" className="hover:text-white transition-colors hover:pl-1">Districts</Link></li>
+                        <li><Link href="/explore/rulers" className="hover:text-white transition-colors hover:pl-1">Rulers</Link></li>
+                        <li><Link href="/explore/recipes" className="hover:text-white transition-colors hover:pl-1">Recipes</Link></li>
+                        <li><Link href="/explore/temples" className="hover:text-white transition-colors hover:pl-1">Temples</Link></li>
+                        <li><Link href="/languages" className="hover:text-white transition-colors hover:pl-1">Languages</Link></li>
+
                     </ul>
                 </div>
+
+                {/*<div>*/}
+                {/*    <h3 className="font-serif text-lg font-bold mb-6 text-accent">Community</h3>*/}
+                {/*    <ul className="space-y-4 text-white/70">*/}
+                {/*        <li><Link href="#" className="hover:text-white transition-colors">Share a Story</Link></li>*/}
+                {/*        <li><Link href="#" className="hover:text-white transition-colors">Suggest a Place</Link></li>*/}
+                {/*        <li><Link href="#" className="hover:text-white transition-colors">Artisan Network</Link></li>*/}
+                {/*        <li><Link href="#" className="hover:text-white transition-colors">Events Calendar</Link></li>*/}
+                {/*    </ul>*/}
+                {/*</div>*/}
 
                 <div>
                     <h3 className="font-serif text-lg font-bold mb-6 text-accent">Community</h3>
                     <ul className="space-y-4 text-white/70">
-                        <li><a href="#" className="hover:text-white transition-colors">Share a Story</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">Suggest a Place</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">Artisan Network</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">Events Calendar</a></li>
+                        <li><Link href="/about" className="hover:text-white transition-colors hover:pl-1 ">About Us</Link></li>
+                        <li><Link href="/about/support" className="hover:text-white transition-colors hover:pl-1">Support</Link></li>
+                        <li><Link href="/about/contribute" className="hover:text-white transition-colors hover:pl-1">Contribute</Link></li>
+                        {/*<li><Link href="#" className="hover:text-white transition-colors">Events Calendar</Link></li>*/}
                     </ul>
                 </div>
 

@@ -177,19 +177,19 @@ export default function Home() {
                             lang: "Kumaoni",
                             desc: "Spoken in the Kumaon region, known for its sweet intonation and rich folklore.",
                             greeting: "Kas chho?",
-                            link: "/explore/languages/kumaoni"
+                            link: "/languages/kumaoni"
                         },
                         {
                             lang: "Garhwali",
                             desc: "The language of the Garhwal kingdom, carrying the boldness of its warriors.",
                             greeting: "Kya haal chaan?",
-                            link: "/explore/languages/garhwali"
+                            link: "/languages/garhwali"
                         },
                         {
                             lang: "Jaunsari",
                             desc: "A unique dialect from the Jaunsar-Bawar region, rich in tribal heritage.",
                             greeting: "Jwai!",
-                            link: "/explore/languages/jaunsari"
+                            link: "/languages/jaunsari"
                         }
                     ].map((item, i) => (
                         <motion.div
