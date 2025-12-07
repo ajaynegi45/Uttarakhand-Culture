@@ -78,7 +78,7 @@ export default function Home() {
                     transition={{duration: 10, ease: "easeOut"}}
                 >
                     <div
-                        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                        className="absolute inset-0 bg-cover bg-center bg-no-repeat home-hero-image"
                         style={{backgroundImage: `url(${backgroundImg.src})`}}
                     />
                     {/* Overlay Gradient */}
@@ -86,16 +86,15 @@ export default function Home() {
                 </motion.div>
 
                 {/* Content */}
-                <div
-                    className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 text-white">
+                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 text-white home-hero-content">
                     <motion.div
                         initial={{opacity: 0, y: 20}}
                         animate={{opacity: 1, y: 0}}
-                        transition={{duration: 0.8, delay: 0.2}}
-                    >
-          <span className="font-hand text-3xl md:text-4xl text-accent mb-4 block transform -rotate-2">
-            Welcome to the Land of Gods
-          </span>
+                        transition={{duration: 0.8, delay: 0.2}}>
+
+                        <span className="font-hand text-3xl md:text-4xl text-accent mb-4 block transform -rotate-2">
+                          Welcome to the Land of Gods
+                        </span>
                         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-serif tracking-tight mb-6 drop-shadow-lg">
                             Discover <span
                             className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/80">Uttarakhand</span>
