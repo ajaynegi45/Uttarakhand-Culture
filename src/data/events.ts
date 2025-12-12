@@ -1,4 +1,4 @@
-import { StaticImageData } from "next/image";
+import {StaticImageData} from "next/image";
 import kumbh from "@/assets/haridwar_sacred_ghats.png"
 
 export interface EventData {

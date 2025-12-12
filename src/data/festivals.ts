@@ -1,4 +1,4 @@
-import { StaticImageData } from "next/image";
+import {StaticImageData} from "next/image";
 import harela from "@/assets/harela.png";
 import Ghughutiya from "@/assets/ghughutiya.png";
 import GheeSankranti from "@/assets/gheeSankranti.png"
@@ -29,7 +29,7 @@ export const festivals: FestivalData[] = [
     {
         date: "15-03",
         title: "Phool Dei",
-        location: "Kumaon & Garhwal" ,
+        location: "Kumaon & Garhwal",
         description: "At the start of spring, children go from house to house, placing fresh flowers on doorsteps and singing simple blessing songs. Families give them rice and jaggery and pray for a happy year and a good harvest.",
         image: phoolDei,
     },

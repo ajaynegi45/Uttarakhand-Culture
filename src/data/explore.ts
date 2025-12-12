@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useState, useCallback, useRef } from "react";
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
-import { Landmark, Mountain, Utensils, Languages, History, PartyPopper, Binoculars } from "lucide-react";
+import {useCallback, useEffect, useMemo, useRef, useState} from "react";
+import {usePathname, useRouter, useSearchParams} from "next/navigation";
+import {Binoculars, History, Landmark, Languages, Mountain, PartyPopper, Utensils} from "lucide-react";
 import festivalImg from "@/assets/phoolDei.png";
 import ruler from "@/assets/panwar_garhwal_temples.png";
 import map from "@/assets/uttarakhand_district_explorer_map_background.png";
@@ -21,13 +21,13 @@ export type CategoryId =
 
 /* Category list */
 export const CATEGORIES: { id: CategoryId; name: string; icon?: any; colorCss?: string }[] = [
-    { id: "all",       name: "All",       icon: Mountain,   colorCss: "bg-muted/20 text-muted-foreground" },
-    { id: "festival",  name: "Festival",  icon: PartyPopper,   colorCss: "bg-orange-100 text-orange-700" },
-    { id: "food",      name: "Cuisine",   icon: Utensils,   colorCss: "bg-green-100 text-green-700" },
-    { id: "tourist",    name: "Tourist",    icon: Binoculars,   colorCss: "bg-blue-100 text-blue-700" },
-    { id: "history",   name: "History",   icon: History,   colorCss: "bg-amber-100 text-amber-700" },
-    { id: "temples",   name: "Temples",   icon: Landmark,   colorCss: "bg-amber-100 text-amber-700" },
-    { id: "language",  name: "Language",  icon: Languages,   colorCss: "bg-[#EFE6DC] text-[#5A3E2B]" },
+    {id: "all", name: "All", icon: Mountain, colorCss: "bg-muted/20 text-muted-foreground"},
+    {id: "festival", name: "Festival", icon: PartyPopper, colorCss: "bg-orange-100 text-orange-700"},
+    {id: "food", name: "Cuisine", icon: Utensils, colorCss: "bg-green-100 text-green-700"},
+    {id: "tourist", name: "Tourist", icon: Binoculars, colorCss: "bg-blue-100 text-blue-700"},
+    {id: "history", name: "History", icon: History, colorCss: "bg-amber-100 text-amber-700"},
+    {id: "temples", name: "Temples", icon: Landmark, colorCss: "bg-amber-100 text-amber-700"},
+    {id: "language", name: "Language", icon: Languages, colorCss: "bg-[#EFE6DC] text-[#5A3E2B]"},
 ];
 
 
@@ -199,7 +199,7 @@ function buildIndexes(features: IFeature[]) {
         }
     }
 
-    return { categoryToIds, tokenToIds };
+    return {categoryToIds, tokenToIds};
 }
 
 /* =====================
@@ -297,7 +297,7 @@ export function useExploreLogic() {
     const debounceRef = useRef<number | null>(null);
 
     // Build indexes once (easy and fast for 50-100 items)
-    const { categoryToIds, tokenToIds } = useMemo(() => buildIndexes(FEATURES), []);
+    const {categoryToIds, tokenToIds} = useMemo(() => buildIndexes(FEATURES), []);
 
     // setSearchQuery: update immediate input AND debounce the heavy update
     const setSearchQuery = useCallback((value: string) => {
@@ -322,7 +322,7 @@ export function useExploreLogic() {
         if (searchQueryInput) params.set("q", searchQueryInput);
         if (selectedCategory && selectedCategory !== "all") params.set("cat", selectedCategory);
         const qs = params.toString();
-        router.replace(`${pathname}${qs ? `?${qs}` : ""}`, { scroll: false });
+        router.replace(`${pathname}${qs ? `?${qs}` : ""}`, {scroll: false});
     }, [searchQueryInput, selectedCategory, pathname, router]);
 
     /**
@@ -369,11 +369,11 @@ export function useExploreLogic() {
             // If raw exists and score is 0, skip non-matching items to avoid clutter (OR semantics)
             if (raw && score === 0) continue;
 
-            scored.push({ feature: feat, score });
+            scored.push({feature: feat, score});
         }
 
         // Sort by score DESC. If tie, sort by title ASC as tiebreaker
-        scored.sort((a, b) => b.score - a.score );
+        scored.sort((a, b) => b.score - a.score);
 
         // Return features only
         return scored.map((s) => s.feature);

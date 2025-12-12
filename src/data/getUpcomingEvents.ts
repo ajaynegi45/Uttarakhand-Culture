@@ -1,6 +1,6 @@
-import { festivals, FestivalData } from "./festivals";
-import { fair as fairs, FairData } from "./fair";
-import { events as rawEvents, EventData } from "./events";
+import {FestivalData, festivals} from "./festivals";
+import {fair as fairs, FairData} from "./fair";
+import {EventData, events as rawEvents} from "./events";
 
 // Interface wrapper to unify the simple data types
 type SourceEvent = FestivalData | FairData | EventData;
@@ -20,10 +20,10 @@ export interface DashboardEvent {
 
 /**
  * Helper function to find the next upcoming event from a list.
- * 
+ *
  * Time Complexity: O(N) - We iterate through the list exactly once.
  * Space Complexity: O(1) - We only store a reference to the best match found so far.
- * 
+ *
  * @param list - Array of events (Festival, Fair, or Event data)
  * @returns The single event object that is closest to the future (or today).
  */
@@ -65,7 +65,7 @@ const getNextEvent = (list: SourceEvent[]): SourceEvent => {
 /**
  * Aggregates upcoming events for the dashboard.
  * Fetches one upcoming item from each category and formats it for the UI.
- * 
+ *
  * Overall Time Complexity: O(N + M + K) where N, M, K are the sizes of the input arrays.
  */
 export const getUpcomingEvents = (): DashboardEvent[] => {

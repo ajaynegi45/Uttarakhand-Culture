@@ -1,10 +1,11 @@
 import type {Metadata} from "next";
-import {Toaster} from "sonner";
 import {Caveat, DM_Sans, Playfair_Display} from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import {ClerkProvider,} from '@clerk/nextjs'
+import {ClerkProvider,} from '@clerk/nextjs';
+import {Suspense} from 'react';
+import Image from "next/image";
 
 const dmSans = DM_Sans({
     subsets: ["latin"],
@@ -24,6 +25,7 @@ const caveat = Caveat({
 export const metadata: Metadata = {
     title: "Uttarakhand Culture",
     description: "Explore the culture and beauty of the Himalayas",
+    icons: {icon: "/Mountain.svg"},
 };
 
 export default function RootLayout({
@@ -34,15 +36,23 @@ export default function RootLayout({
     return (
         <ClerkProvider>
             <html lang="en">
-            <head>
-                <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=DM+Sans:opsz,wght@9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"/>
-                <link rel="icon" href="./Mountain.svg"/>
-            </head>
-            <body className={`${dmSans.variable} ${playfair.variable} ${caveat.variable} antialiased paper-bg`} >
-                <Navbar/>
-                    {children}
-                <Toaster position="bottom-right" richColors={true}/>
-                <Footer/>
+            <body className={`${dmSans.variable} ${playfair.variable} ${caveat.variable} antialiased paper-bg`}>
+            <Navbar/>
+            <Suspense fallback={
+                <div role="status" aria-live="polite"
+                     className="fixed inset-0 flex items-center justify-center bg-white z-50">
+                    <Image
+                        src="/Mountain.svg"
+                        alt="Loading..."
+                        width={120}
+                        height={120}
+                        priority
+                        fetchPriority={"high"}
+                    />
+                </div>}>
+                {children}
+            </Suspense>
+            <Footer/>
             </body>
             </html>
         </ClerkProvider>

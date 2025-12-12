@@ -1,5 +1,5 @@
 import React from 'react';
-import {Home, Compass} from "lucide-react";
+import {Compass} from "lucide-react";
 import Link from "next/link";
 
 // --- Icons (Custom SVGs for specific aesthetics) ---
@@ -27,11 +27,14 @@ const NotFound = () => {
     return (
 
 
-        <div className="min-h-screen flex flex-col items-center justify-center p-6 text-center animate-fade-in relative overflow-hidden bg-[var(--background)]">
+        <div
+            className="min-h-screen flex flex-col items-center justify-center p-6 text-center animate-fade-in relative overflow-hidden bg-[var(--background)]">
 
             {/* Massive Background 404 - Serving as the 'Landscape' */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-        <span className="text-[25vw] font-serif font-bold text-[var(--foreground)] opacity-[0.03] leading-none translate-y-10 tracking-widest">
+            <div
+                className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
+        <span
+            className="text-[25vw] font-serif font-bold text-[var(--foreground)] opacity-[0.03] leading-none translate-y-10 tracking-widest">
           404
         </span>
             </div>
@@ -40,7 +43,7 @@ const NotFound = () => {
                 <div className="relative group">
                     {/* Floating animation for the illustration */}
                     <div className="animate-[float_6s_ease-in-out_infinite]">
-                        <AbstractPeaks className="w-80 h-40" />
+                        <AbstractPeaks className="w-80 h-40"/>
                     </div>
                 </div>
 
@@ -50,15 +53,17 @@ const NotFound = () => {
                     </h1>
                     <div className="w-20 h-1 bg-[var(--accent)] mx-auto rounded-full"></div>
                     <p className="text-[var(--muted-foreground)] text-lg leading-relaxed max-w-md mx-auto pt-5">
-                        The page you are looking for has vanished into the mist. It may have been moved or never existed.
+                        The page you are looking for has vanished into the mist. It may have been moved or never
+                        existed.
                     </p>
                 </div>
 
                 <Link href={"/"}
-                    className="group relative inline-flex items-center justify-center px-8 py-3 text-sm font-medium transition-all duration-300 ease-out bg-[var(--primary)] text-[var(--primary-foreground)] rounded-[var(--radius)] hover:shadow-lg hover:shadow-[var(--primary)]/20 hover:-translate-y-1 overflow-hidden"
+                      className="group relative inline-flex items-center justify-center px-8 py-3 text-sm font-medium transition-all duration-300 ease-out bg-[var(--primary)] text-[var(--primary-foreground)] rounded-[var(--radius)] hover:shadow-lg hover:shadow-[var(--primary)]/20 hover:-translate-y-1 overflow-hidden"
                 >
-                    <span className="absolute inset-0 w-full h-full bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out"></span>
-                    <Compass className="w-4 h-4 mr-2 group-hover:rotate-45 transition-transform duration-300" />
+                    <span
+                        className="absolute inset-0 w-full h-full bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out"></span>
+                    <Compass className="w-4 h-4 mr-2 group-hover:rotate-45 transition-transform duration-300"/>
                     Find Your Way Home
                 </Link>
             </div>

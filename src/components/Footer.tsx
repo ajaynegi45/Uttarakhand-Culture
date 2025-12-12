@@ -42,11 +42,16 @@ export default function Footer() {
                         {/*<li><Link href="#" className="hover:text-white transition-colors">Spiritual Sites</Link></li>*/}
                         {/*<li><Link href="#" className="hover:text-white transition-colors">Cuisine</Link></li>*/}
 
-                        <li><Link href="/explore/districts" className="hover:text-white transition-colors hover:pl-1">Districts</Link></li>
-                        <li><Link href="/explore/rulers" className="hover:text-white transition-colors hover:pl-1">Rulers</Link></li>
-                        <li><Link href="/explore/recipes" className="hover:text-white transition-colors hover:pl-1">Recipes</Link></li>
-                        <li><Link href="/explore/temples" className="hover:text-white transition-colors hover:pl-1">Temples</Link></li>
-                        <li><Link href="/languages" className="hover:text-white transition-colors hover:pl-1">Languages</Link></li>
+                        <li><Link href="/explore/districts"
+                                  className="hover:text-white transition-colors hover:pl-1">Districts</Link></li>
+                        <li><Link href="/explore/rulers"
+                                  className="hover:text-white transition-colors hover:pl-1">Rulers</Link></li>
+                        <li><Link href="/explore/recipes"
+                                  className="hover:text-white transition-colors hover:pl-1">Recipes</Link></li>
+                        <li><Link href="/explore/temples"
+                                  className="hover:text-white transition-colors hover:pl-1">Temples</Link></li>
+                        <li><Link href="/languages"
+                                  className="hover:text-white transition-colors hover:pl-1">Languages</Link></li>
 
                     </ul>
                 </div>
@@ -64,9 +69,12 @@ export default function Footer() {
                 <div>
                     <h3 className="font-serif text-lg font-bold mb-6 text-accent">Community</h3>
                     <ul className="space-y-4 text-white/70">
-                        <li><Link href="/about" className="hover:text-white transition-colors hover:pl-1 ">About Us</Link></li>
-                        <li><Link href="/about/support" className="hover:text-white transition-colors hover:pl-1">Support</Link></li>
-                        <li><Link href="/about/contribute" className="hover:text-white transition-colors hover:pl-1">Contribute</Link></li>
+                        <li><Link href="/about" className="hover:text-white transition-colors hover:pl-1 ">About
+                            Us</Link></li>
+                        <li><Link href="/about/support"
+                                  className="hover:text-white transition-colors hover:pl-1">Support</Link></li>
+                        <li><Link href="/about/contribute"
+                                  className="hover:text-white transition-colors hover:pl-1">Contribute</Link></li>
                         {/*<li><Link href="#" className="hover:text-white transition-colors">Events Calendar</Link></li>*/}
                     </ul>
                 </div>
@@ -83,7 +91,8 @@ export default function Footer() {
                 </div>
             </div>
 
-            <section className={"relative text-center text-gray-100 flex flex-col items-center justify-center pt-10  text-[1.8rem] sm:text-[4rem] md:text-[5rem] lg:text-[6rem] leading-[1] pointer-events-none font-bold -mb-1 sm:-mb-5 opacity-40"}>
+            <section
+                className={"relative text-center text-gray-100 flex flex-col items-center justify-center pt-10  text-[1.8rem] sm:text-[4rem] md:text-[5rem] lg:text-[6rem] leading-[1] pointer-events-none font-bold -mb-1 sm:-mb-5 opacity-40"}>
                  <span
                      className="inline-block"
                      style={{

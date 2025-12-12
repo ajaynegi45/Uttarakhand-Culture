@@ -1,7 +1,7 @@
 import React from "react";
-import Image, { StaticImageData } from "next/image";
-import { Calendar, MapPin } from "lucide-react";
-import { cn } from "@/lib/utils";
+import Image, {StaticImageData} from "next/image";
+import {Calendar, MapPin} from "lucide-react";
+import {cn} from "@/lib/utils";
 
 export interface EventCardProps {
     image: string | StaticImageData;
@@ -38,10 +38,10 @@ function parseDateRange(dateStr: string): { start?: Date; end?: Date } {
     if (parts.length >= 2) {
         const start = tryParseDate(parts[0].trim());
         const end = tryParseDate(parts[1].trim());
-        return { start: start || undefined, end: end || undefined };
+        return {start: start || undefined, end: end || undefined};
     }
     const single = tryParseDate(dateStr.trim());
-    return { start: single || undefined, end: single || undefined };
+    return {start: single || undefined, end: single || undefined};
 }
 
 function startOfDay(d: Date) {
@@ -56,7 +56,7 @@ function isSameDay(a: Date, b: Date) {
 
 function formatDate(d?: Date) {
     if (!d) return "";
-    return new Intl.DateTimeFormat("en-IN", { month: "short", day: "numeric", year: "numeric" }).format(d);
+    return new Intl.DateTimeFormat("en-IN", {month: "short", day: "numeric", year: "numeric"}).format(d);
 }
 
 export function EventCard({
@@ -69,7 +69,7 @@ export function EventCard({
                               badge = "bg-primary text-primary-foreground",
                               color = "text-foreground",
                           }: EventCardProps) {
-    const { start, end } = parseDateRange(date);
+    const {start, end} = parseDateRange(date);
 
     const today = startOfDay(new Date());
     let showBadge = true;
@@ -114,10 +114,11 @@ export function EventCard({
     }
 
     return (
-        <div className="flex flex-col md:flex-row h-full w-full bg-card border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <div
+            className="flex flex-col md:flex-row h-full w-full bg-card border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
             {/* Image Side */}
             <div className="md:w-1/2 relative h-64 md:h-auto overflow-hidden min-h-[220px]">
-                <div className="absolute inset-0 bg-black/10 z-10" />
+                <div className="absolute inset-0 bg-black/10 z-10"/>
 
                 <Image
                     fill
@@ -141,13 +142,14 @@ export function EventCard({
 
             {/* Content Side */}
             <div className="md:w-1/2 px-2 py-6 sm:p-6 md:p-10 flex flex-col justify-center">
-                <div className="flex items-center gap-2 sm:gap-4 mb-4 text-sm font-medium text-muted-foreground flex-wrap">
+                <div
+                    className="flex items-center gap-2 sm:gap-4 mb-4 text-sm font-medium text-muted-foreground flex-wrap">
                     <div className="flex items-center gap-1.5">
-                        <Calendar className="w-4 h-4" />
+                        <Calendar className="w-4 h-4"/>
                         <span>{date}</span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                        <MapPin className="w-4 h-4" />
+                        <MapPin className="w-4 h-4"/>
                         <span>{location}</span>
                     </div>
                 </div>

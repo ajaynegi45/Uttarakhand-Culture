@@ -84,7 +84,7 @@ export default function RecipesList() {
                                     <div className="relative h-64 overflow-hidden">
                                         <Image src={recipe.image} alt={recipe.title}
                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                               fill loading={"lazy"} />
+                                               fill loading={"lazy"}/>
                                         <div
                                             className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
                                             {recipe.category}

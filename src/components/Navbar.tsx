@@ -7,13 +7,7 @@ import {usePathname} from "next/navigation";
 import {cn} from "@/lib/utils";
 import Link from "next/link";
 
-import {
-    SignInButton,
-    SignUpButton,
-    SignedIn,
-    SignedOut,
-    UserButton,
-} from '@clerk/nextjs'
+import {SignedIn, SignedOut, SignInButton, SignUpButton, UserButton,} from '@clerk/nextjs'
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -62,7 +56,7 @@ export default function Navbar() {
                     "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-2 py-4",
                     isScrolled || !isHome || isMobileMenuOpen
                         ? "bg-background/90 backdrop-blur-md border-b border-white/20 shadow-lg py-3 text-foreground"
-                            : "bg-transparent text-white"
+                        : "bg-transparent text-white"
                 )}
             >
                 <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -108,7 +102,7 @@ export default function Navbar() {
                             </SignedOut>
 
                             <SignedIn>
-                                <UserButton />
+                                <UserButton/>
                             </SignedIn>
                         </header>
                         {/*<Link href="/contact">*/}
@@ -171,7 +165,7 @@ export default function Navbar() {
                             </SignedOut>
 
                             <SignedIn>
-                                <UserButton>Profile</UserButton >
+                                <UserButton>Profile</UserButton>
                             </SignedIn>
                         </header>
 

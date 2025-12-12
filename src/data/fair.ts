@@ -1,4 +1,4 @@
-import { StaticImageData } from "next/image";
+import {StaticImageData} from "next/image";
 import harela from "@/assets/harela_festival_celebration.png";
 
 import mela from "@/assets/gauchar_mela_fair.png"

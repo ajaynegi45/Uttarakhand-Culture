@@ -1,16 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import { festivals, FestivalData } from "@/data/festivals";
-import { fair, FairData } from "@/data/fair";
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
-import { CalendarIcon, MapPinIcon } from "lucide-react";
+import {FestivalData, festivals} from "@/data/festivals";
+import {fair, FairData} from "@/data/fair";
+import {Card, CardContent,} from "@/components/ui/card";
+import {CalendarIcon, MapPinIcon} from "lucide-react";
 
 // Combine and sort data (optional, or just display separately. Use requested List format)
 // The user asked for "list" but "card form", effectively a grid of cards.
@@ -35,7 +28,7 @@ export default function FestivalsAndFairsPage() {
                         className="object-cover opacity-60"
                         priority
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background"/>
                 </div>
 
                 <div className="relative z-10 text-center px-4 max-w-4xl mx-auto space-y-6">
@@ -63,7 +56,7 @@ export default function FestivalsAndFairsPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {allEvents.map((event, index) => (
-                        <FestivalCard key={`${event.title}-${index}`} event={event} />
+                        <FestivalCard key={`${event.title}-${index}`} event={event}/>
                     ))}
                 </div>
             </section>
@@ -71,9 +64,10 @@ export default function FestivalsAndFairsPage() {
     );
 }
 
-function FestivalCard({ event }: { event: FestivalData | FairData }) {
+function FestivalCard({event}: { event: FestivalData | FairData }) {
     return (
-        <Card className="group overflow-hidden border-border/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card">
+        <Card
+            className="group overflow-hidden border-border/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card">
             <div className="relative h-64 w-full overflow-hidden">
                 <Image
                     src={event.image}
@@ -81,10 +75,11 @@ function FestivalCard({ event }: { event: FestivalData | FairData }) {
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                <div
+                    className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"/>
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                     <div className="flex items-center gap-2 text-sm font-medium text-primary-foreground/90 mb-1">
-                        <CalendarIcon className="w-4 h-4" />
+                        <CalendarIcon className="w-4 h-4"/>
                         <span>{event.date || "Date varies"}</span>
                     </div>
                     <h3 className="text-xl font-bold leading-tight">{event.title}</h3>
@@ -93,7 +88,7 @@ function FestivalCard({ event }: { event: FestivalData | FairData }) {
 
             <CardContent className="pt-6">
                 <div className="flex items-start gap-2 text-sm text-muted-foreground mb-4">
-                    <MapPinIcon className="w-4 h-4 mt-0.5 shrink-0" />
+                    <MapPinIcon className="w-4 h-4 mt-0.5 shrink-0"/>
                     <span>{event.location}</span>
                 </div>
                 <p className="text-muted-foreground line-clamp-3 text-sm leading-relaxed">

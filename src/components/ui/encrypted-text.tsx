@@ -1,7 +1,7 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "motion/react";
-import { cn } from "@/lib/utils";
+import React, {useEffect, useRef, useState} from "react";
+import {motion, useInView} from "motion/react";
+import {cn} from "@/lib/utils";
 
 type EncryptedTextProps = {
     text: string;
@@ -55,7 +55,7 @@ export const EncryptedText: React.FC<EncryptedTextProps> = ({
                                                                 revealedClassName,
                                                             }) => {
     const ref = useRef<HTMLSpanElement>(null);
-    const isInView = useInView(ref, { once: true });
+    const isInView = useInView(ref, {once: true});
 
     const [revealCount, setRevealCount] = useState<number>(0);
     const animationFrameRef = useRef<number | null>(null);

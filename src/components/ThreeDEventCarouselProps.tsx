@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 import {Calendar, ChevronLeft, ChevronRight, MapPin} from "lucide-react";
 import {cn} from "@/lib/utils";
@@ -41,12 +41,12 @@ export const ThreeDEventCarousel = ({
         setActiveIndex((prev) => (prev - 1 + events.length) % events.length);
     }, [events.length]);
 
-    // useEffect(() => {
-    //     if (autoRotate && !isPaused) {
-    //         const timer = setInterval(nextSlide, interval);
-    //         return () => clearInterval(timer);
-    //     }
-    // }, [autoRotate, interval, isPaused, nextSlide]);
+    useEffect(() => {
+        if (autoRotate && !isPaused) {
+            const timer = setInterval(nextSlide, interval);
+            return () => clearInterval(timer);
+        }
+    }, [autoRotate, interval, isPaused, nextSlide]);
 
     const getImageVariant = (position: string) => {
         if (position === "active") {
@@ -131,7 +131,7 @@ export const ThreeDEventCarousel = ({
                                     animate={getImageVariant(position)}
                                     exit={getImageVariant("hidden")}
                                     transition={{
-                                        duration: 0.3,
+                                        duration: 0.2,
                                         ease: [0.25, 0.1, 0.25, 1.0],
                                     }}
                                     onClick={() => {
@@ -152,14 +152,15 @@ export const ThreeDEventCarousel = ({
                                     {/* Card Content - Image and Info Side by Side */}
                                     <div className="flex flex-col md:flex-row h-full">
                                         {/* Image Side */}
-                                        <div className="md:w-1/2 relative h-64 md:h-full overflow-hidden pointer-events-none  min-h-[220px] md:min-h-0">
+                                        <div
+                                            className="md:w-1/2 relative h-64 md:h-full overflow-hidden pointer-events-none  min-h-[220px] md:min-h-0">
                                             <div className="absolute inset-0 bg-black/10 z-10"/>
 
                                             <Image fill
                                                    loading={"lazy"}
-                                                src={event.image}
-                                                alt={event.title}
-                                                className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+                                                   src={event.image}
+                                                   alt={event.title}
+                                                   className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
                                             />
 
                                             <div className={cn(
@@ -172,7 +173,8 @@ export const ThreeDEventCarousel = ({
 
                                         {/* Content Side */}
                                         <div className="md:w-1/2 px-2  py-4 sm:p6 md:p-10 flex flex-col justify-center">
-                                            <div className="flex items-center gap-2 sm:gap-4 mb-4 text-sm font-medium text-muted-foreground flex-wrap">
+                                            <div
+                                                className="flex items-center gap-2 sm:gap-4 mb-4 text-sm font-medium text-muted-foreground flex-wrap">
                                                 <div className="flex items-center gap-1.5">
                                                     <Calendar className="w-4 h-4"/>
                                                     <span>{event.date}</span>

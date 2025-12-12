@@ -1,17 +1,23 @@
 "use client";
 
 import Section from "@/components/Section";
-import { motion } from "motion/react"
+import {motion} from "motion/react"
 import {ArrowRight, Search, X as XIcon} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import {cn} from "@/lib/utils";
 import {CATEGORIES, useExploreLogic} from "@/data/explore";
-import React from "react";
 
 export default function Explore() {
 
-    const {filteredFeatures, searchQuery, selectedCategory, setSearchQuery, setSelectedCategory, isFiltering} = useExploreLogic();
+    const {
+        filteredFeatures,
+        searchQuery,
+        selectedCategory,
+        setSearchQuery,
+        setSelectedCategory,
+        isFiltering
+    } = useExploreLogic();
 
     return (
         <div className="min-h-screen bg-background mb-32 sm:mb-42">
@@ -110,7 +116,7 @@ export default function Explore() {
                             <article role="listitem" key={item.id}
                                      className="group cursor-pointer h-full flex flex-col">
 
-                                <Link key={item.title} href={item.url} className="no-underline" prefetch={"auto"}>
+                                <Link key={item.title} href={item.url} className="no-underline">
                                     <motion.div
                                         initial={{opacity: 0, y: 20}}
                                         whileInView={{opacity: 1, y: 0}}
@@ -121,18 +127,12 @@ export default function Explore() {
                                         <div className="relative h-64 rounded-2xl overflow-hidden mb-3">
                                             <div className={cn(
                                                 "absolute top-2 left-2 sm:top-4 sm:left-4 z-10 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider",
-                                                "backdrop-blur-xl bg-white/20 ",
-                                                "text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
+                                                "backdrop-blur-xl bg-white/40 ",
+                                                "text-[#5A3E2B]"
                                                 // item.colorCss
                                             )}>{item.categories[0]}</div>
 
-                                            <div
-                                                className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white/70 text-black/80"
-                                                aria-hidden
-                                            >
-                                                {item.categories[0]}
-                                            </div>
-
+                                            {/*<div className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white/70 text-black/80" aria-hidden>{item.categories[0]} </div>*/}
 
                                             <Image
                                                 fill
