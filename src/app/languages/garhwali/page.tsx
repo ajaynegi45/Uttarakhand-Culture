@@ -2,6 +2,8 @@ import Section from "@/components/Section";
 import {Card, CardContent} from "@/components/ui/card";
 import {BookOpen, MessageCircle, Play} from "lucide-react";
 
+// https://grokipedia.com/page/Garhwali_language
+
 export default function Page() {
     return (
         <div className="min-h-screen bg-background">

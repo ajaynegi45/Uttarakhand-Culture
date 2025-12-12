@@ -66,7 +66,7 @@ export default function Support() {
                 <div className="max-w-2xl mx-auto bg-white p-10 rounded-3xl shadow-xl border border-secondary/20">
                     <h2 className="text-3xl font-serif font-bold mb-6">Make a Contribution</h2>
                     <p className="text-muted-foreground mb-8">
-                        Every rupee goes directly into maintaining and improving Devbhoomi Echoes.
+                        Every rupee goes directly into maintaining and improving Uttarakhand Culture.
                         We are transparent about our costs and usage.
                     </p>
 

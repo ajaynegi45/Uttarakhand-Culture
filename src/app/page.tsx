@@ -1,9 +1,7 @@
 "use client";
 
-import gauchar from "@/assets/gauchar_mela_fair.png";
+import { getUpcomingEvents } from "@/data/getUpcomingEvents";
 import danceImg from "@/assets/choliya_folk_dancers.png";
-import kumbhMela from "@/assets/kumbh_mela_haridwar.png";
-import harela from "@/assets/harela_festival_celebration.png";
 import nandaImg from "@/assets/nanda_devi_peak_majestic_view.png";
 import foodImg from "@/assets/traditional_pahadi_cuisine_thali.png";
 import aipanTexture from "@/assets/traditional_aipan_art_texture.png";
@@ -11,60 +9,25 @@ import templeImg from "@/assets/kedarnath_temple_spiritual_scene.png";
 import backgroundImg from "@/assets/majestic_himalayan_sunrise_hero_background.png";
 
 import Section from "@/components/Section";
-import {Button} from "@/components/ui/button";
-import {Card, CardContent} from "@/components/ui/card";
-import {ThreeDEventCarousel} from "@/components/ThreeDEventCarouselProps";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ThreeDEventCarousel } from "@/components/ThreeDEventCarouselProps";
 
 import Link from "next/link";
 import Image from 'next/image';
-import {useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
 
-import {motion} from "framer-motion";
-import {ArrowDown, ArrowRight, Music, Sparkles} from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowDown, ArrowRight, Music, Sparkles } from "lucide-react";
 
 
 export default function Home() {
 
     const router = useRouter();
 
-    const festivalEvents = [
-        {
-            id: 1,
-            type: "Festival",
-            title: "Harela Festival",
-            date: "July 16, 2025",
-            location: "All across Kumaon & Garhwal",
-            description: "Harela, meaning 'Day of Green', is a festival that celebrates the onset of the monsoon and the importance of agriculture. Locals plant saplings, symbolizing prosperity and a deep bond with nature.",
-            image: harela.src,
-            color: "text-emerald-700",
-            bg: "bg-emerald-50",
-            badge: "bg-emerald-100 text-emerald-800"
-        },
-        {
-            id: 2,
-            type: "Fair",
-            title: "Gauchar Mela",
-            date: "November 14-20, 2025",
-            location: "Gauchar, Chamoli",
-            description: "One of the biggest trade fairs in Uttarakhand, blending culture, commerce, and heritage. Originally started in 1943, it showcases local handicrafts, agricultural produce, and vibrant folk performances.",
-            image: gauchar.src,
-            color: "text-orange-700",
-            bg: "bg-orange-50",
-            badge: "bg-orange-100 text-orange-800"
-        },
-        {
-            id: 3,
-            type: "Event",
-            title: "Kumbh Mela (Mini)",
-            date: "January 2026",
-            location: "Haridwar",
-            description: "A spiritual gathering of millions on the banks of the Ganga. While the Purna Kumbh happens every 12 years, the Ardh Kumbh and annual Magh Mela attract pilgrims seeking spiritual cleansing and peace.",
-            image: kumbhMela.src,
-            color: "text-blue-700",
-            bg: "bg-blue-50",
-            badge: "bg-blue-100 text-blue-800"
-        }
-    ];
+
+    const festivalEvents = getUpcomingEvents();
+
 
 
     return (
@@ -73,32 +36,31 @@ export default function Home() {
                 {/* Background Image with Parallax feel */}
                 <motion.div
                     className="absolute inset-0 z-0"
-                    initial={{scale: 1.1}}
-                    animate={{scale: 1}}
-                    transition={{duration: 10, ease: "easeOut"}}
+                    initial={{ scale: 1.1 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 10, ease: "easeOut" }}
                 >
                     <div
-                        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                        style={{backgroundImage: `url(${backgroundImg.src})`}}
+                        className="absolute inset-0 bg-cover bg-center bg-no-repeat home-hero-image"
+                        style={{ backgroundImage: `url(${backgroundImg.src})` }}
                     />
                     {/* Overlay Gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60"/>
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60" />
                 </motion.div>
 
                 {/* Content */}
-                <div
-                    className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 text-white">
+                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 text-white home-hero-content">
                     <motion.div
-                        initial={{opacity: 0, y: 20}}
-                        animate={{opacity: 1, y: 0}}
-                        transition={{duration: 0.8, delay: 0.2}}
-                    >
-          <span className="font-hand text-3xl md:text-4xl text-accent mb-4 block transform -rotate-2">
-            Welcome to the Land of Gods
-          </span>
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}>
+
+                        <span className="font-hand text-3xl md:text-4xl text-accent mb-4 block transform -rotate-2">
+                            Welcome to the Land of Gods
+                        </span>
                         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-serif tracking-tight mb-6 drop-shadow-lg">
                             Discover <span
-                            className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/80">Uttarakhand</span>
+                                className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/80">Uttarakhand</span>
                         </h1>
                         <p className="text-lg md:text-xl max-w-2xl mx-auto text-white/90 font-light leading-relaxed mb-8">
                             Where the mountains whisper ancient tales, and every path leads to a spiritual journey.
@@ -107,7 +69,7 @@ export default function Home() {
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                             <Button onClick={() => router.push("/explore")} size="lg"
-                                    className="cursor-pointer rounded-full text-lg px-8 py-6 bg-secondary hover:bg-secondary/90 text-white border-none shadow-lg shadow-secondary/20">
+                                className="cursor-pointer rounded-full text-lg px-8 py-6 bg-secondary hover:bg-secondary/90 text-white border-none shadow-lg shadow-secondary/20">
                                 Start the Journey
                             </Button>
 
@@ -122,12 +84,12 @@ export default function Home() {
                 {/* Scroll Indicator */}
                 <motion.div
                     className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/80 z-10 flex flex-col items-center gap-2 cursor-pointer"
-                    animate={{y: [0, 10, 0]}}
-                    transition={{repeat: Infinity, duration: 2}}
-                    onClick={() => window.scrollTo({top: window.innerHeight, behavior: 'smooth'})}
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{ repeat: Infinity, duration: 2 }}
+                    onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
                 >
                     <span className="text-xs uppercase tracking-widest font-medium">Scroll to Explore</span>
-                    <ArrowDown className="w-5 h-5"/>
+                    <ArrowDown className="w-5 h-5" />
                 </motion.div>
             </div>
 
@@ -135,10 +97,10 @@ export default function Home() {
             {/* Introduction with Parallax Reveal */}
             <Section centered className="bg-white relative">
                 <motion.div
-                    initial={{opacity: 0, y: 50}}
-                    whileInView={{opacity: 1, y: 0}}
-                    viewport={{once: true, margin: "-100px"}}
-                    transition={{duration: 0.8}}
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8 }}
                     className="max-w-3xl mx-auto text-center"
                 >
                     <span className="font-hand text-3xl text-secondary mb-2 block">Namaste</span>
@@ -156,17 +118,25 @@ export default function Home() {
             </Section>
 
 
-            {/* Festival Section */}
+
+            {/*Festivals • Fairs • Cultural Events*/}
             <Section pattern className="bg-muted/30">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-12">
-                        <span className="text-secondary font-medium tracking-wider uppercase text-sm mb-2 block">Events & Fairs</span>
-                        <h2 className="text-4xl font-serif font-bold text-primary">Experience the Vibrance</h2>
+                        <span className="text-secondary font-medium tracking-wider uppercase text-sm mb-2 block">
+                            Events Calendar
+                        </span>
+                        <h2 className="text-4xl font-serif font-bold text-primary">
+                            Upcoming Festivals & Fairs
+                        </h2>
+                        <p className="mt-3 max-w-2xl mx-auto text-muted-foreground text-base">
+                            Discover upcoming celebrations that bring communities, rituals, and seasons together.
+                        </p>
                     </div>
-
-                    <ThreeDEventCarousel events={festivalEvents}/>
+                    <ThreeDEventCarousel events={festivalEvents} />
                 </div>
             </Section>
+
 
 
             {/* Languages Section */}
@@ -194,16 +164,16 @@ export default function Home() {
                     ].map((item, i) => (
                         <motion.div
                             key={item.lang}
-                            initial={{opacity: 0, y: 30}}
-                            whileInView={{opacity: 1, y: 0}}
-                            transition={{delay: i * 0.2, duration: 0.5}}
-                            viewport={{once: true}}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: i * 0.2, duration: 0.5 }}
+                            viewport={{ once: true }}
                         >
                             <Link href={item.link} className="block h-full">
                                 <Card
                                     className="h-full border-none shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden group bg-gray-50 cursor-pointer">
                                     <div
-                                        className="h-2 bg-secondary w-0 group-hover:w-full transition-all duration-500"/>
+                                        className="h-2 bg-secondary w-0 group-hover:w-full transition-all duration-500" />
                                     <CardContent className="p-8 flex flex-col h-full">
                                         <h3 className="text-2xl font-serif font-bold mb-2 text-primary">{item.lang}</h3>
                                         <p className="text-muted-foreground mb-6 flex-grow">{item.desc}</p>
@@ -228,14 +198,14 @@ export default function Home() {
                     <div className="flex flex-col md:flex-row gap-12 items-center">
                         <motion.div
                             className="md:w-1/2 space-y-6"
-                            initial={{opacity: 0, x: -50}}
-                            whileInView={{opacity: 1, x: 0}}
-                            transition={{duration: 0.8}}
-                            viewport={{once: true}}
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
                         >
                             <div
                                 className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 text-secondary text-sm font-medium">
-                                <Sparkles className="w-4 h-4"/>
+                                <Sparkles className="w-4 h-4" />
                                 Featured Story
                             </div>
                             <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold">The Legend of Nanda
@@ -250,17 +220,17 @@ export default function Home() {
                             </p>
                             <Link href="/god/nanda-devi">
                                 <Button variant="link"
-                                        className="text-secondary p-0 text-lg h-auto font-serif italic hover:underline">
-                                    Read full legend <ArrowRight className="w-4 h-4 ml-2"/>
+                                    className="text-secondary p-0 text-lg h-auto font-serif italic hover:underline">
+                                    Read full legend <ArrowRight className="w-4 h-4 ml-2" />
                                 </Button>
                             </Link>
                         </motion.div>
                         <motion.div
                             className="md:w-1/2 relative"
-                            initial={{opacity: 0, x: 50}}
-                            whileInView={{opacity: 1, x: 0}}
-                            transition={{duration: 0.8}}
-                            viewport={{once: true}}
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
                         >
                             <Link href="/god/nanda-devi">
                                 <div
@@ -288,14 +258,14 @@ export default function Home() {
 
                     {/* Large Item - Temple */}
                     <motion.div
-                        initial={{opacity: 0, scale: 0.95}}
-                        whileInView={{opacity: 1, scale: 1}}
-                        viewport={{once: true}}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
                         className="md:col-span-8 row-span-2 relative group overflow-hidden rounded-2xl shadow-md cursor-pointer"
                     >
                         <Link href="/explore/temples" className="block w-full h-full">
                             <Image src={templeImg} alt="Spiritual Heritage"
-                                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                             <div
                                 className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-8 flex flex-col justify-end">
                                 <span
@@ -309,21 +279,21 @@ export default function Home() {
 
                     {/* Medium Item - Aipan Art */}
                     <motion.div
-                        initial={{opacity: 0, x: 20}}
-                        whileInView={{opacity: 1, x: 0}}
-                        transition={{delay: 0.1}}
-                        viewport={{once: true}}
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.1 }}
+                        viewport={{ once: true }}
                         className="md:col-span-4 row-span-1 relative group overflow-hidden rounded-2xl shadow-md cursor-pointer"
                     >
                         <Link href="/explore" className="block w-full h-full">
                             <Image src={aipanTexture} alt="Aipan Art"
-                                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                             <div
                                 className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 text-center backdrop-blur-sm">
                                 <div>
                                     <h3 className="text-2xl font-serif font-bold text-white mb-2">Aipan Art</h3>
                                     <Button variant="outline"
-                                            className="text-white border-white hover:bg-white hover:text-black">Learn
+                                        className="text-white border-white hover:bg-white hover:text-black">Learn
                                         Technique</Button>
                                 </div>
                             </div>
@@ -332,15 +302,15 @@ export default function Home() {
 
                     {/* Medium Item - Food */}
                     <motion.div
-                        initial={{opacity: 0, x: 20}}
-                        whileInView={{opacity: 1, x: 0}}
-                        transition={{delay: 0.2}}
-                        viewport={{once: true}}
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.2 }}
+                        viewport={{ once: true }}
                         className="md:col-span-4 row-span-1 relative group overflow-hidden rounded-2xl shadow-md cursor-pointer"
                     >
                         <Link href="/explore/recipes" className="block w-full h-full">
                             <Image src={foodImg.src} alt="Pahadi Cuisine" fill
-                                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                             <div
                                 className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-6 flex flex-col justify-end">
                                 <h3 className="text-xl font-serif font-bold text-white">Pahadi Zayka</h3>
@@ -351,15 +321,15 @@ export default function Home() {
 
                     {/* Wide Item - Dance */}
                     <motion.div
-                        initial={{opacity: 0, y: 20}}
-                        whileInView={{opacity: 1, y: 0}}
-                        transition={{delay: 0.3}}
-                        viewport={{once: true}}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3 }}
+                        viewport={{ once: true }}
                         className="md:col-span-12 row-span-1 relative group overflow-hidden rounded-2xl shadow-md cursor-pointer"
                     >
                         <Link href="/explore" className="block w-full h-full">
                             <Image src={danceImg} alt="Folk Dance"
-                                   className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"/>
+                                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
                             <div
                                 className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent p-8 flex flex-col justify-center">
                                 <div className="max-w-xl">
@@ -372,7 +342,7 @@ export default function Home() {
                                         dances like Choliya, Jhora, and Chancheri.
                                     </p>
                                     <Button className="bg-secondary hover:bg-secondary/90 text-white rounded-full">
-                                        <Music className="w-4 h-4 mr-2"/> Listen to Folk Music
+                                        <Music className="w-4 h-4 mr-2" /> Listen to Folk Music
                                     </Button>
                                 </div>
                             </div>

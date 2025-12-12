@@ -22,7 +22,7 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-    title: "Himalayan Echoes",
+    title: "Uttarakhand Culture",
     description: "Explore the culture and beauty of the Himalayas",
 };
 

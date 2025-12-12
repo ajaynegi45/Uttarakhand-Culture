@@ -1,4 +1,4 @@
-import {Accordion, AccordionContent, AccordionItem, AccordionTrigger,} from "@/components/ui/accordion";
+import {Accordion, AccordionContent, AccordionItem, AccordionTrigger,} from "./ui/accordion";
 import {motion} from "framer-motion";
 
 export default function FAQ() {
@@ -8,7 +8,7 @@ export default function FAQ() {
             answer: "Uttarakhand is a year-round destination. Summer (March to June) is perfect for escaping the heat and trekking. Winter (October to February) is ideal for snow lovers and skiing in Auli. The monsoon (July to September) sees the Valley of Flowers in full bloom, though travel can be tricky due to rain."
         },
         {
-            question: "How can I contribute a story to Devbhoomi Echoes?",
+            question: "How can I contribute a story to Uttarakhand Culture?",
             answer: "We love community contributions! You can go to the 'Community' section in the footer or click on 'Share a Story' on the homepage. We accept written stories, photo essays, and audio recordings of folk songs."
         },
         {

@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Himalayan Echoes: Uttarakhand Culture
+
+Welcome to **Himalayan Echoes**, a digital gateway to the soul of Uttarakhand. This project is dedicated to showcasing the rich heritage, vibrant culture, and breathtaking natural beauty of "Devbhoomi" (Land of Gods).
+
+We aren't just building a website; we're crafting an immersive experience. From the intricate history of local rulers to the rhythm of folk festivals, every pixel here tells a story.
+
+## What's Inside?
+
+This application is built to help you explore Uttarakhand in depth:
+
+*   **Interactive Exploration**: Navigate through districts and tehsils with our interactive SVG maps.
+*   **Cultural Deep Dive**: Learn about the festivals, fairs, and temples that define the region's spiritual life.
+*   **History & Heritage**: Trace the lineage of rulers and the evolution of local languages.
+*   **Visual Storytelling**: Experience the state through 3D carousels and curated visual narratives.
+
+## Tech Stack
+
+We use modern, robust tools to ensure a smooth and performant experience:
+
+*   **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
+*   **Styling**: [Tailwind CSS](https://tailwindcss.com/) with `tailwindcss-animate`
+*   **Animation**: [Framer Motion](https://www.framer.com/motion/) & `motion` for fluid interactions
+*   **UI Components**: Built with [Radix UI](https://www.radix-ui.com/) primitives
+*   **Icons**: [Lucide React](https://lucide.dev/)
 
 ## Getting Started
 
-First, run the development server:
+If you want to run this project locally, here is how you do it.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You'll need `node` and `npm` installed. We recommend using the latest LTS version of Node.js.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/ajaynegi45/himalayan-echoes.git
+    cd himalayan-echoes
+    ```
 
-## Learn More
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4.  **Open your browser:**
+    Navigate to [http://localhost:3000](http://localhost:3000).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Navigation
 
-## Deploy on Vercel
+For a detailed breakdown of where everything lives in the codebase, check out [FILE_STRUCTURE.md](./FILE_STRUCTURE.md). It will help you orient yourself quickly.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+We love contributions. Whether it's fixing a typo, adding new cultural data, or proposing a design overhaul, your help is welcome.
+
+Please read [CONTRIBUTING.md](./CONTRIBUTING.md) to understand our workflow and how to submit a Pull Request.
+
+## Community
+
+This is an open space for everyone. We believe in kindness and respect. Please review our [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) to understand the standards we uphold in our community.
+
+---
+
+*Built with ❤️ for Uttarakhand.*

@@ -50,7 +50,7 @@ export default function About() {
                         <p className="mb-6">
                             Young people are moving to cities, dialects are fading, and the intricate details of our
                             rituals are being forgotten.
-                            <strong className="text-primary"> Devbhoomi Echoes</strong> was born out of a desire to stop
+                            <strong className="text-primary"> Uttarakhand Culture</strong> was born out of a desire to stop
                             this erosion.
                         </p>
                         <p className="mb-8">

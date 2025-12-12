@@ -15,7 +15,7 @@ export default function Footer() {
                 <div className="col-span-1 md:col-span-2 ">
                     <div className="flex items-center gap-2 font-serif text-2xl font-bold mb-6">
                         <Mountain className="h-8 w-8 text-secondary"/>
-                        <span>Devbhoomi Echoes</span>
+                        <span>Uttarakhand Culture</span>
                     </div>
                     <p className="text-white/70 max-w-md leading-relaxed mb-8">
                         Preserving the stories, culture, and spirit of Uttarakhand.

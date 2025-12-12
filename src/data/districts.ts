@@ -302,7 +302,7 @@ export const districts: District[] = [
         color: "text-amber-700"
     },
     {
-        id: "tehri",
+        id: "tehri-garhwal",
         name: "Tehri Garhwal",
         region: "Garhwal",
         description: "Home to the massive Tehri Dam and the old capital of the Garhwal Kingdom (Old Tehri, now submerged).",
@@ -328,7 +328,7 @@ export const districts: District[] = [
         color: "text-cyan-700"
     },
     {
-        id: "usnagar",
+        id: "udham-singh-nagar",
         name: "Udham Singh Nagar",
         region: "Kumaon",
         description: "The Food Bowl of Uttarakhand. A plain area known for its agriculture and industry.",

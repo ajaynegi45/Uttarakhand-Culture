@@ -84,7 +84,7 @@ export default function Contact() {
                         </div>
                         <div>
                             <h3 className="font-bold">Email Us</h3>
-                            <p className="text-muted-foreground">hello@devbhoomiechoes.com</p>
+                            <p className="text-muted-foreground">hello@uttarakhandculture.com</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-4 p-6 bg-white rounded-2xl border border-border shadow-sm">
@@ -93,7 +93,7 @@ export default function Contact() {
                         </div>
                         <div>
                             <h3 className="font-bold">Socials</h3>
-                            <p className="text-muted-foreground">@devbhoomiechoes</p>
+                            <p className="text-muted-foreground">@uttarakhandculture</p>
                         </div>
                     </div>
                 </div>

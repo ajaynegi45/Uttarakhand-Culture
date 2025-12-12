@@ -1,7 +1,8 @@
-import React, {useCallback, useEffect, useState} from "react";
+import React, { useCallback, useEffect, useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 import {Calendar, ChevronLeft, ChevronRight, MapPin} from "lucide-react";
 import {cn} from "@/lib/utils";
+import Image from "next/image";
 
 interface Event {
     id: number;
@@ -40,12 +41,12 @@ export const ThreeDEventCarousel = ({
         setActiveIndex((prev) => (prev - 1 + events.length) % events.length);
     }, [events.length]);
 
-    useEffect(() => {
-        if (autoRotate && !isPaused) {
-            const timer = setInterval(nextSlide, interval);
-            return () => clearInterval(timer);
-        }
-    }, [autoRotate, interval, isPaused, nextSlide]);
+    // useEffect(() => {
+    //     if (autoRotate && !isPaused) {
+    //         const timer = setInterval(nextSlide, interval);
+    //         return () => clearInterval(timer);
+    //     }
+    // }, [autoRotate, interval, isPaused, nextSlide]);
 
     const getImageVariant = (position: string) => {
         if (position === "active") {
@@ -60,8 +61,8 @@ export const ThreeDEventCarousel = ({
         } else if (position === "prev") {
             return {
                 zIndex: 10,
-                opacity: 0.5,
-                scale: 0.85,
+                opacity: 0.1,
+                scale: 0.4,
                 x: "-60%",
                 rotateY: 30,
                 z: -150,
@@ -69,8 +70,8 @@ export const ThreeDEventCarousel = ({
         } else if (position === "next") {
             return {
                 zIndex: 10,
-                opacity: 0.5,
-                scale: 0.85,
+                opacity: 0.1,
+                scale: 0.4,
                 x: "60%",
                 rotateY: -30,
                 z: -150,
@@ -125,12 +126,12 @@ export const ThreeDEventCarousel = ({
                             return (
                                 <motion.div
                                     key={event.id}
-                                    className="absolute w-[90%] md:w-[85%] h-[90%] rounded-3xl shadow-2xl overflow-hidden bg-white  cursor-pointer"
+                                    className="absolute w-[90%] md:w-[85%] h-[90%] rounded-3xl shadow-2xl overflow-hidden bg-white"
                                     initial={getImageVariant("hidden")}
                                     animate={getImageVariant(position)}
                                     exit={getImageVariant("hidden")}
                                     transition={{
-                                        duration: 0.6,
+                                        duration: 0.3,
                                         ease: [0.25, 0.1, 0.25, 1.0],
                                     }}
                                     onClick={() => {
@@ -151,13 +152,16 @@ export const ThreeDEventCarousel = ({
                                     {/* Card Content - Image and Info Side by Side */}
                                     <div className="flex flex-col md:flex-row h-full">
                                         {/* Image Side */}
-                                        <div className="md:w-1/2 relative h-64 md:h-full overflow-hidden">
+                                        <div className="md:w-1/2 relative h-64 md:h-full overflow-hidden pointer-events-none  min-h-[220px] md:min-h-0">
                                             <div className="absolute inset-0 bg-black/10 z-10"/>
-                                            <img
+
+                                            <Image fill
+                                                   loading={"lazy"}
                                                 src={event.image}
                                                 alt={event.title}
                                                 className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
                                             />
+
                                             <div className={cn(
                                                 "absolute top-4 left-4 z-20 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm",
                                                 event.badge
@@ -167,9 +171,8 @@ export const ThreeDEventCarousel = ({
                                         </div>
 
                                         {/* Content Side */}
-                                        <div className="md:w-1/2 p-4 sm:p6 md:p-10 flex flex-col justify-center">
-                                            <div
-                                                className="flex items-center gap-4 mb-4 text-sm font-medium text-muted-foreground flex-wrap">
+                                        <div className="md:w-1/2 px-2  py-4 sm:p6 md:p-10 flex flex-col justify-center">
+                                            <div className="flex items-center gap-2 sm:gap-4 mb-4 text-sm font-medium text-muted-foreground flex-wrap">
                                                 <div className="flex items-center gap-1.5">
                                                     <Calendar className="w-4 h-4"/>
                                                     <span>{event.date}</span>
@@ -180,11 +183,11 @@ export const ThreeDEventCarousel = ({
                                                 </div>
                                             </div>
 
-                                            <h3 className={cn("text-2xl md:text-3xl lg:text-4xl font-serif font-bold mb-4", event.color)}>
+                                            <h3 className={cn("text-xl md:text-3xl px-2 sm:px-0 lg:text-4xl font-serif font-bold mb-2 sm:mb-4 ", event.color)}>
                                                 {event.title}
                                             </h3>
 
-                                            <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
+                                            <p className="text-muted-foreground px-2 sm:px-0 leading-relaxed text-sm md:text-base">
                                                 {event.description}
                                             </p>
                                         </div>
@@ -198,14 +201,14 @@ export const ThreeDEventCarousel = ({
                 {/* Navigation Arrows */}
                 <button
                     onClick={prevSlide}
-                    className="absolute left-1 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-white/90 hover:bg-white text-neutral-900 transition-all backdrop-blur-sm shadow-lg hover:scale-110 opacity-60 sm:opacity-100"
+                    className="absolute left-0 top-1/2 -translate-y-1/2 z-30 p-1 sm:p-3 rounded-full bg-white/90 hover:bg-white text-neutral-900 transition-all backdrop-blur-sm shadow-lg hover:scale-110 opacity-60 sm:opacity-100 cursor-pointer"
                     aria-label="Previous slide"
                 >
                     <ChevronLeft className="w-6 h-6"/>
                 </button>
                 <button
                     onClick={nextSlide}
-                    className="absolute right-1 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-white/90 hover:bg-white text-neutral-900 transition-all backdrop-blur-sm shadow-lg hover:scale-110 opacity-60 sm:opacity-100"
+                    className="absolute right-0 top-1/2 -translate-y-1/2 z-30 p-1 sm:p-3  rounded-full bg-white/90 hover:bg-white text-neutral-900 transition-all backdrop-blur-sm shadow-lg hover:scale-110 opacity-60 sm:opacity-100 cursor-pointer"
                     aria-label="Next slide"
                 >
                     <ChevronRight className="w-6 h-6"/>

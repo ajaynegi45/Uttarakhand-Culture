@@ -281,8 +281,7 @@ export default function RulingPowers() {
                                                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                                                 />
                                                                 {/* Decorative corner accent */}
-                                                                <div
-                                                                    className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-secondary/20 to-transparent"/>
+                                                                {/*<div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-secondary/20 to-transparent"/>*/}
                                                             </div>
 
                                                             {/* Content Section */}
