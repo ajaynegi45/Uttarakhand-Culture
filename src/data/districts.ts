@@ -378,7 +378,7 @@ export const districts: District[] = [
             key_events: "Named after freedom fighter Udham Singh."
         },
         sub_division: ["Jaspur", "Kashipur", "Bajpur", "Rudrapur", "Kichha", "Sitarganj", "Khatima"],
-        // tehsil: [],
+        tehsil: ["Jaspur", "Kashipur", "Khatima", "Bajpur", "Gadarpur", "Rudrapur", "Kichha", "Sitarganj"],
         block: ["Jaspur", "Kashipur", "Bajpur", "Gadarpur", "Rudrapur", "Sitarganj", "Khatima"],
         image: usnagarImg.src,
         color: "text-lime-700"

@@ -32,19 +32,19 @@ export default function DistrictDetail() {
         );
     }
 
-    if (!district.tehsil) {
-        return (
-            <div className="min-h-screen flex items-center justify-center bg-background">
-                <div className="text-center">
-                    <h1 className="text-4xl font-bold mb-4">Data Error</h1>
-                    <p className="mb-6">Subdivision data not available</p>
-                    <Link href="/explore/districts">
-                        <Button>Return to Map</Button>
-                    </Link>
-                </div>
-            </div>
-        );
-    }
+    // if (!district.tehsil) {
+    //     return (
+    //         <div className="min-h-screen flex items-center justify-center bg-background">
+    //             <div className="text-center">
+    //                 <h1 className="text-4xl font-bold mb-4">Data Error</h1>
+    //                 <p className="mb-6">Subdivision data not available</p>
+    //                 <Link href="/explore/districts">
+    //                     <Button>Return to Map</Button>
+    //                 </Link>
+    //             </div>
+    //         </div>
+    //     );
+    // }
 
     return (
         <div className="min-h-screen bg-background">
@@ -94,7 +94,7 @@ export default function DistrictDetail() {
                                         </div>
                                     </div>
                                 :
-                                <DistrictTehsilMap districtName={district.name} tehsilCount={ district.tehsil.length}/>
+                                <DistrictTehsilMap districtName={district.name}   tehsilCount={district.tehsil?.length || district.sub_division?.length || district.block?.length || 0} />
                             }
 
                             <p className="text-center text-xs text-muted-foreground mt-4">
@@ -175,8 +175,7 @@ export default function DistrictDetail() {
                                         className="text-sm text-muted-foreground uppercase tracking-wider block mb-1">Dynasties</span>
                                     <div className="flex gap-2 flex-wrap">
                                         {district.history.dynasties.map(d => (
-                                            <span key={d}
-                                                  className="px-3 py-1 bg-amber-50 text-amber-800 rounded-full text-sm font-medium border border-amber-100">
+                                            <span key={d} className="px-3 py-1 bg-amber-50 text-amber-800 rounded-full text-sm font-medium border border-amber-100">
                                {d}
                             </span>
                                         ))}
@@ -196,9 +195,7 @@ export default function DistrictDetail() {
                                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 wrap-normal">
                                     { district.sub_division?.map((subdivision) => (
                                         <div key={subdivision}
-                                             className="px-3 py-2 rounded-lg text-sm font-medium border transition-shadow hover:shadow-sm focus:outline-none truncate cursor-default bg-emerald-50 text-emerald-800 border-emerald-100 focus:ring-emerald-200
-
-                                          "
+                                             className="px-3 py-2 rounded-lg text-sm font-medium border transition-shadow hover:shadow-sm focus:outline-none truncate cursor-default bg-emerald-50 text-emerald-800 border-emerald-100 focus:ring-emerald-200"
                                              aria-label={String(subdivision)}>
                                             {subdivision}
                                         </div>
@@ -208,6 +205,7 @@ export default function DistrictDetail() {
                             :""}
 
                         {/* Tehsil */}
+                        { district.tehsil ?
                         <div>
                             <h3 className="text-xl font-bold font-serif mb-4">{district.tehsil.length} Tehsil</h3>
                             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 wrap-normal">
@@ -220,6 +218,7 @@ export default function DistrictDetail() {
                                 ))}
                             </div>
                         </div>
+                            :""}
 
                         {/* Block */}
                         { district.block ?
