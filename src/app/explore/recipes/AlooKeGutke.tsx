@@ -84,12 +84,12 @@ export default function AlooKeGutke() {
                     <div className="md:col-span-1">
                         <div className="bg-muted/30 p-6 rounded-2xl sticky top-24">
                             <h3 className="font-bold text-lg mb-4 flex items-center gap-2">
-                                <ChefHat className="w-5 h-5 text-secondary"/> Chef's Tip
+                                <ChefHat className="w-5 h-5 text-secondary"/> Chef&#39;s Tip
                             </h3>
                             <p className="text-sm text-muted-foreground italic mb-6">
-                                "If you can't find Jakhiya, you can use mustard seeds (rai) or cumin, but the authentic
+                                &#34;If you can&#39;t find Jakhiya, you can use mustard seeds (rai) or cumin, but the authentic
                                 taste comes only from Jakhiya. Also, ensure potatoes are cold before frying to keep them
-                                firm."
+                                firm.&#34;
                             </p>
                             <Link href="/recipes">
                                 <Button variant="outline" className="w-full">

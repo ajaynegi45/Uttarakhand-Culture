@@ -7,7 +7,6 @@ import foodImg from "@/assets/food_uttarakhand_culture.webp";
 import aipanTexture from "@/assets/aipan_art_uttarakhand_culture.webp";
 import templeImg from "@/assets/kedarnath_temple_uttarakhand_culture.webp";
 import backgroundImg from "@/assets/almora_district_uttarakhand_culture.webp";
-// import backgroundImg from "@/assets/badrinath_temple_uttarakhand_culture.webp";
 
 import Section from "@/components/Section";
 import {Button} from "@/components/ui/button";
@@ -19,21 +18,19 @@ import Image from 'next/image';
 import {useRouter} from "next/navigation";
 
 import {motion} from "framer-motion";
-import {ArrowDown, ArrowRight, Music, Sparkles} from "lucide-react";
+import {ArrowDown, ArrowRight, Sparkles} from "lucide-react";
+import ArrowFollowTarget from "@/components/ui/ArrowFollowTarget";
 
 
 export default function Home() {
 
     const router = useRouter();
-
-
     const festivalEvents = getUpcomingEvents();
-
 
     return (
         <>
             <div className="relative h-screen w-full overflow-hidden">
-                {/* Background Image with Parallax feel */}
+                 {/*Background Image with Parallax feel */}
                 <motion.div
                     className="absolute inset-0 z-0"
                     initial={{scale: 1.5}}
@@ -41,7 +38,7 @@ export default function Home() {
                     transition={{duration: 10, ease: "easeOut"}}
                 >
                     <div
-                        className="absolute inset-0 bg-cover bg-center bg-no-repeat home-hero-image"
+                        className="absolute inset-0 bg-cover bg-center bg-no-repeat home-hero-image bg-linear-to-b from-blue-50 to-transparent"
                         // style={{ backgroundImage: `url(${backgroundImg.src})` }}
                     ><Image src={backgroundImg} alt="Uttarakhand-Culture-Hero Image"
                             fill
@@ -56,6 +53,7 @@ export default function Home() {
                     <div className="absolute inset-0 bg-linear-to-b from-black/30 via-transparent to-black/60"/>
                 </motion.div>
 
+
                 {/* Content */}
                 <div
                     className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 text-white home-hero-content">
@@ -68,7 +66,7 @@ export default function Home() {
                               style={{textShadow: '2px 3px 6px rgba(0,0,0,0.25)'}}>
                             Welcome to the Land of Gods
                         </span>
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-serif tracking-tight mb-6 drop-shadow-lg">
+                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-clip-text font-serif tracking-tight mb-6 drop-shadow-lg">
                             Discover <span
                             className="text-transparent bg-clip-text bg-linear-to-r from-white to-white/80">Uttarakhand</span>
                         </h1>
@@ -78,16 +76,19 @@ export default function Home() {
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                            <ArrowFollowTarget>
                             <Button onClick={() => router.push("/explore")} size="lg"
                                     className="cursor-pointer rounded-full text-lg px-8 py-6 bg-secondary hover:bg-secondary/90 text-white border-none shadow-lg shadow-secondary/20">
                                 Start the Journey
                             </Button>
+                            </ArrowFollowTarget>
 
                             {/*<Button onClick={() => router.push("/support")} size="lg" variant="outline"*/}
                             {/*        className="cursor-pointer rounded-full text-lg px-8 py-6 bg-white/10 hover:bg-white/20 text-white border-white/30 backdrop-blur-sm">*/}
                             {/*    Support us*/}
                             {/*</Button>*/}
                         </div>
+
                     </motion.div>
                 </div>
 

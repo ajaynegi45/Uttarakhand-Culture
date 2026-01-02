@@ -10,7 +10,7 @@ export default function DistrictExplorer() {
         <div className="min-h-screen bg-background">
 
             <section
-                className="pt-32 pb-12 px-6 bg-gradient-to-b from-emerald-50/50 to-transparent relative overflow-hidden">
+                className="pt-32 pb-12 px-6 bg-linear-to-b from-emerald-50/50 to-transparent relative overflow-hidden">
                 {/* Background Texture */}
                 <div
                     className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/light-paper-fibers.png')] opacity-100"/>
