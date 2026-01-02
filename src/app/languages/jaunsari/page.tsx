@@ -9,7 +9,7 @@ export default function Page() {
         <div className="min-h-screen bg-background">
 
 
-            <section className="pt-32 pb-16 px-6 bg-gradient-to-b from-purple-50 to-transparent">
+            <section className="pt-32 pb-16 px-6 bg-linear-to-b from-purple-50 to-transparent">
                 <div className="max-w-4xl mx-auto text-center">
                     <span className="font-hand text-3xl text-secondary mb-2 block">Jaunsari Boli</span>
                     <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 text-primary">
@@ -56,43 +56,42 @@ export default function Page() {
                         <div className="bg-purple-50 p-8 rounded-3xl border border-purple-100">
                             <p className="text-lg leading-relaxed text-purple-900 mb-4">
                                 Jaunsari culture is unique because of its close association with the Mahasu Devta. The
-                                language reflects their close-knit community structure and their vibrant festivals like
-                                'Magh Mela' and 'Bissu'.
+                                language reflects their close-knit community structure and their vibrant festivals like &#39;Magh Mela&#39; and &#39;Bissu&#39;.
                             </p>
                             <p className="text-lg leading-relaxed text-purple-900">
                                 Unlike Kumaoni and Garhwali, Jaunsari has preserved many ancient tribal words that trace
-                                back to the Pandavas' influence in the region.
+                                back to the Pandavas&#39; influence in the region.
                             </p>
                         </div>
                     </div>
 
                     {/* Learning Resources */}
-                    <div>
-                        <h2 className="text-3xl font-serif font-bold mb-6">Learn More</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <Card className="bg-white hover:shadow-lg transition-shadow cursor-pointer">
-                                <CardContent className="p-6 text-center">
-                                    <Play className="w-10 h-10 mx-auto text-secondary mb-4"/>
-                                    <h3 className="font-bold mb-2">Tribal Dances</h3>
-                                    <p className="text-sm text-muted-foreground">Learn through Harul dance songs.</p>
-                                </CardContent>
-                            </Card>
-                            <Card className="bg-white hover:shadow-lg transition-shadow cursor-pointer">
-                                <CardContent className="p-6 text-center">
-                                    <BookOpen className="w-10 h-10 mx-auto text-secondary mb-4"/>
-                                    <h3 className="font-bold mb-2">History</h3>
-                                    <p className="text-sm text-muted-foreground">Read about Jaunsar-Bawar.</p>
-                                </CardContent>
-                            </Card>
-                            <Card className="bg-white hover:shadow-lg transition-shadow cursor-pointer">
-                                <CardContent className="p-6 text-center">
-                                    <MessageCircle className="w-10 h-10 mx-auto text-secondary mb-4"/>
-                                    <h3 className="font-bold mb-2">Community Chat</h3>
-                                    <p className="text-sm text-muted-foreground">Connect with locals.</p>
-                                </CardContent>
-                            </Card>
-                        </div>
-                    </div>
+                    {/*<div>*/}
+                    {/*    <h2 className="text-3xl font-serif font-bold mb-6">Learn More</h2>*/}
+                    {/*    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">*/}
+                    {/*        <Card className="bg-white hover:shadow-lg transition-shadow cursor-pointer">*/}
+                    {/*            <CardContent className="p-6 text-center">*/}
+                    {/*                <Play className="w-10 h-10 mx-auto text-secondary mb-4"/>*/}
+                    {/*                <h3 className="font-bold mb-2">Tribal Dances</h3>*/}
+                    {/*                <p className="text-sm text-muted-foreground">Learn through Harul dance songs.</p>*/}
+                    {/*            </CardContent>*/}
+                    {/*        </Card>*/}
+                    {/*        <Card className="bg-white hover:shadow-lg transition-shadow cursor-pointer">*/}
+                    {/*            <CardContent className="p-6 text-center">*/}
+                    {/*                <BookOpen className="w-10 h-10 mx-auto text-secondary mb-4"/>*/}
+                    {/*                <h3 className="font-bold mb-2">History</h3>*/}
+                    {/*                <p className="text-sm text-muted-foreground">Read about Jaunsar-Bawar.</p>*/}
+                    {/*            </CardContent>*/}
+                    {/*        </Card>*/}
+                    {/*        <Card className="bg-white hover:shadow-lg transition-shadow cursor-pointer">*/}
+                    {/*            <CardContent className="p-6 text-center">*/}
+                    {/*                <MessageCircle className="w-10 h-10 mx-auto text-secondary mb-4"/>*/}
+                    {/*                <h3 className="font-bold mb-2">Community Chat</h3>*/}
+                    {/*                <p className="text-sm text-muted-foreground">Connect with locals.</p>*/}
+                    {/*            </CardContent>*/}
+                    {/*        </Card>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
 
                 </div>
             </Section>

@@ -77,32 +77,32 @@ export default function Page() {
                     </div>
 
                     {/* Learning Resources */}
-                    <div>
-                        <h2 className="text-3xl font-serif font-bold mb-6">Learn More</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <Card className="bg-white hover:shadow-lg transition-shadow cursor-pointer">
-                                <CardContent className="p-6 text-center">
-                                    <Play className="w-10 h-10 mx-auto text-secondary mb-4"/>
-                                    <h3 className="font-bold mb-2">Folk Songs</h3>
-                                    <p className="text-sm text-muted-foreground">Learn through music.</p>
-                                </CardContent>
-                            </Card>
-                            <Card className="bg-white hover:shadow-lg transition-shadow cursor-pointer">
-                                <CardContent className="p-6 text-center">
-                                    <BookOpen className="w-10 h-10 mx-auto text-secondary mb-4"/>
-                                    <h3 className="font-bold mb-2">Literature</h3>
-                                    <p className="text-sm text-muted-foreground">Read poems by Narendra Singh Negi.</p>
-                                </CardContent>
-                            </Card>
-                            <Card className="bg-white hover:shadow-lg transition-shadow cursor-pointer">
-                                <CardContent className="p-6 text-center">
-                                    <MessageCircle className="w-10 h-10 mx-auto text-secondary mb-4"/>
-                                    <h3 className="font-bold mb-2">Community Chat</h3>
-                                    <p className="text-sm text-muted-foreground">Practice with native speakers.</p>
-                                </CardContent>
-                            </Card>
-                        </div>
-                    </div>
+                    {/*<div>*/}
+                    {/*    <h2 className="text-3xl font-serif font-bold mb-6">Learn More</h2>*/}
+                    {/*    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">*/}
+                    {/*        <Card className="bg-white hover:shadow-lg transition-shadow cursor-pointer">*/}
+                    {/*            <CardContent className="p-6 text-center">*/}
+                    {/*                <Play className="w-10 h-10 mx-auto text-secondary mb-4"/>*/}
+                    {/*                <h3 className="font-bold mb-2">Folk Songs</h3>*/}
+                    {/*                <p className="text-sm text-muted-foreground">Learn through music.</p>*/}
+                    {/*            </CardContent>*/}
+                    {/*        </Card>*/}
+                    {/*        <Card className="bg-white hover:shadow-lg transition-shadow cursor-pointer">*/}
+                    {/*            <CardContent className="p-6 text-center">*/}
+                    {/*                <BookOpen className="w-10 h-10 mx-auto text-secondary mb-4"/>*/}
+                    {/*                <h3 className="font-bold mb-2">Literature</h3>*/}
+                    {/*                <p className="text-sm text-muted-foreground">Read poems by Narendra Singh Negi.</p>*/}
+                    {/*            </CardContent>*/}
+                    {/*        </Card>*/}
+                    {/*        <Card className="bg-white hover:shadow-lg transition-shadow cursor-pointer">*/}
+                    {/*            <CardContent className="p-6 text-center">*/}
+                    {/*                <MessageCircle className="w-10 h-10 mx-auto text-secondary mb-4"/>*/}
+                    {/*                <h3 className="font-bold mb-2">Community Chat</h3>*/}
+                    {/*                <p className="text-sm text-muted-foreground">Practice with native speakers.</p>*/}
+                    {/*            </CardContent>*/}
+                    {/*        </Card>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
 
                 </div>
             </Section>
