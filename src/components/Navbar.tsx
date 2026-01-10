@@ -60,12 +60,9 @@ export default function Navbar() {
                 )}
             >
                 <div className="max-w-7xl mx-auto flex items-center justify-between">
-                    <Link href="/"
-                          className="flex items-center gap-2 font-serif text-2xl font-bold tracking-tight hover:opacity-90 transition-opacity cursor-pointer z-50 relative">
-                        <Mountain
-                            className={cn("h-8 w-8", (isScrolled || !isHome || isMobileMenuOpen) ? "text-secondary" : "text-white")}/>
-                        <span>Uttarakhand<span
-                            className={cn((isScrolled || !isHome || isMobileMenuOpen) ? "text-secondary" : "text-white")}>Culture</span></span>
+                    <Link href="/" className="flex items-center gap-1 tracking-wide font-serif text-3xl font-bold tracking-tight hover:opacity-90 transition-opacity cursor-pointer z-50 relative">
+                        <Mountain className={cn("h-8 w-8", (isScrolled || !isHome || isMobileMenuOpen) ? "text-secondary" : "text-white")}/>
+                        <span className={"font-hand"}>Uttarakhand<span className={cn((isScrolled || !isHome || isMobileMenuOpen) ? "text-secondary" : "text-white")}>Culture</span></span>
                     </Link>
 
                     {/* Desktop Nav */}
