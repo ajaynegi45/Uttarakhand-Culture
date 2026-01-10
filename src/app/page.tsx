@@ -44,7 +44,8 @@ export default function Home() {
                         // style={{ backgroundImage: `url(${backgroundImg.src})` }}
                     ><Image src={backgroundImg} alt="Uttarakhand-Culture-Hero Image"
                             fill
-                            priority
+                            priority={true}
+                            decoding="async"
                             className="object-cover home-hero-image"
                             placeholder={"blur"}
                     />
