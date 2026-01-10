@@ -4,6 +4,7 @@ import Section from "@/components/Section";
 import {motion} from "framer-motion";
 import {Globe, Heart, Mountain, Users} from "lucide-react";
 import {useRouter} from "next/navigation";
+import Link from "next/link";
 
 export default function About() {
     const router = useRouter();
@@ -44,11 +45,11 @@ export default function About() {
                     <div className="prose prose-lg text-muted-foreground">
                         <p className="mb-6">
                             Uttarakhand, the &#39;Devbhoomi&#39; (Land of Gods), is home to a rich tapestry of culture,
-                            language, and traditions that date back millennia. However, as modernization sweeps through
+                            language and traditions that date back millennia. However, as modernization sweeps through
                             the hills, many of these stories are being lost.
                         </p>
                         <p className="mb-6">
-                            Young people are moving to cities, dialects are fading, and the intricate details of our
+                            Young people are moving to cities, dialects are fading and the intricate details of our
                             rituals are being forgotten.
                             <strong className="text-primary"> Uttarakhand Culture</strong> was born out of a desire to
                             stop
@@ -56,9 +57,9 @@ export default function About() {
                         </p>
                         <p className="mb-8">
                             We solve the problem of <span className="italic">accessibility</span>. Cultural knowledge
-                            shouldn&#39;t be hidden in dusty books or fading memories; it should be vibrant, digital,
+                            shouldn&#39;t be hidden in dusty books or fading memories; it should be vibrant, digital
                             and easy to explore. We are creating a living archive that connects the youth to their roots
-                            in a language they understand—digital, visual, and immersive.
+                            in a language they understand—digital, visual and immersive.
                         </p>
 
                         <div className="bg-muted/30 p-6 rounded-2xl border border-border/50">
@@ -68,11 +69,11 @@ export default function About() {
                                 community-driven preservation.
                                 Developers can contribute code, fix bugs, or build new features.
                             </p>
-                            <a href="https://github.com/ajaynegi45/Uttarakhand-Culture-NewUI" target="_blank"
+                            <Link href="https://github.com/ajaynegi45/Uttarakhand-Culture" target="_blank"
                                rel="noopener noreferrer"
                                className="inline-flex items-center text-secondary font-bold hover:underline">
                                 View on GitHub <span className="ml-2">→</span>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -124,11 +125,11 @@ export default function About() {
                     <div className="relative z-10">
                         <h2 className="text-3xl font-serif font-bold mb-6">Join the Movement</h2>
                         <p className="max-w-xl mx-auto text-white/80 mb-8">
-                            Are you a writer, photographer, or just someone who loves Uttarakhand? We need your help to
+                            Are you a writer, photographer or just someone who loves Uttarakhand? We need your help to
                             grow this archive.
                         </p>
                         <button onClick={() => router.push("/about/contribute")}
-                                className="bg-white text-primary px-8 py-3 rounded-full font-bold hover:bg-secondary hover:text-white transition-colors shadow-lg">
+                                className="bg-white text-primary px-8 py-3 rounded-full font-bold hover:bg-secondary hover:text-white transition-colors shadow-lg cursor-pointer">
                             Get Involved
                         </button>
                     </div>

@@ -6,7 +6,9 @@ import nandaImg from "@/assets/nanda_devi_peak_uttarakhand_culture.webp";
 import foodImg from "@/assets/food_uttarakhand_culture.webp";
 import aipanTexture from "@/assets/aipan_art_uttarakhand_culture.webp";
 import templeImg from "@/assets/kedarnath_temple_uttarakhand_culture.webp";
-import backgroundImg from "@/assets/almora_district_uttarakhand_culture.webp";
+// import backgroundImg from "@/assets/almora_district_uttarakhand_culture.webp";
+import backgroundImg from "@/assets/background-1_uttarakhand_culture.webp";
+// import backgroundImg from "@/assets/background-2_uttarakhand_culture.jpg";
 
 import Section from "@/components/Section";
 import {Button} from "@/components/ui/button";
@@ -62,7 +64,7 @@ export default function Home() {
                         animate={{opacity: 1, y: 0}}
                         transition={{duration: 0.8, delay: 0.2}}>
 
-                        <span className="font-hand text-3xl md:text-4xl text-accent mb-4 block transform -rotate-2 "
+                        <span className="font-hand text-3xl md:text-4xl text-green-900  mb-4 block transform -rotate-2 "
                               style={{textShadow: '2px 3px 6px rgba(0,0,0,0.25)'}}>
                             Welcome to the Land of Gods
                         </span>

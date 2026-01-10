@@ -4,8 +4,31 @@ import Section from "@/components/Section";
 import {Button} from "@/components/ui/button";
 import {Code, Github, Mail, PenTool} from "lucide-react";
 import {motion} from "framer-motion";
+import { fetchContributors, Contributor } from "@/data/github";
+import {useEffect, useState} from "react";
+import Image from "next/image";
+import Link from "next/link";
+
 
 export default function Page() {
+    const [contributors, setContributors] = useState<Contributor[]>([]);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        let mounted = true;
+        (async () => {
+            try {
+                const data = await fetchContributors();
+                if (mounted) setContributors(data);
+            } catch (e: any) {
+                console.error(e);
+                if (mounted) setError(e.message || "Failed to fetch contributors");
+            }
+        })();
+        return () => {
+            mounted = false;
+        };
+    }, []);
     return (
         <div className="min-h-screen bg-background">
 
@@ -53,7 +76,7 @@ export default function Page() {
                         <div className="space-y-6">
                             <div>
                                 <h3 className="font-bold text-lg mb-2">🐞 Found a Bug?</h3>
-                                <p className="text-muted-foreground">Open an issue with details or, even better, submit
+                                <p className="text-muted-foreground">Open an issue with details or even better, submit
                                     a pull request with the fix.</p>
                             </div>
                             <div>
@@ -64,23 +87,23 @@ export default function Page() {
                             <div>
                                 <h3 className="font-bold text-lg mb-2">💅 Want to Improve the UI?</h3>
                                 <p className="text-muted-foreground">If you have design skills, we welcome UI
-                                    improvements! Propose changes in layout, color scheme, or fonts—we love minimal and
+                                    improvements! Propose changes in layout, color scheme or fonts—we love minimal and
                                     clean designs.</p>
                             </div>
                             <div>
                                 <h3 className="font-bold text-lg mb-2">💻 Tech Stack</h3>
-                                <p className="text-muted-foreground">We use React, Tailwind CSS, and Framer Motion. If
+                                <p className="text-muted-foreground">We use React, Tailwind CSS and Framer Motion. If
                                     you have expertise, your help is appreciated!</p>
                             </div>
                         </div>
 
                         <div className="mt-8 pt-8 border-t border-border/50">
-                            <a href="https://github.com/ajaynegi45/Uttarakhand-Culture-NewUI" target="_blank"
+                            <Link href="https://github.com/ajaynegi45/Uttarakhand-Culture-NewUI" target="_blank"
                                rel="noopener noreferrer">
-                                <Button className="w-full gap-2">
+                                <Button className="w-full gap-2 cursor-alias hover:bg-secondary">
                                     <Github className="w-4 h-4"/> View on GitHub
                                 </Button>
-                            </a>
+                            </Link>
                         </div>
                     </motion.div>
 
@@ -112,20 +135,24 @@ export default function Page() {
                             <div>
                                 <h3 className="font-bold text-lg mb-2">📚 Gather Cultural Content</h3>
                                 <p className="text-muted-foreground">Choose an aspect of Uttarakhand’s culture—history,
-                                    traditions, or nature—and gather authentic information. Please cite your
+                                    traditions or nature—and gather authentic information. Please cite your
                                     sources.</p>
                             </div>
                             <div>
                                 <h3 className="font-bold text-lg mb-2">💡 Suggest a Name</h3>
                                 <p className="text-muted-foreground">We want a meaningful name in the local language.
-                                    Share your ideas via email with the subject "Website Name Suggestion".</p>
+                                    Share your ideas with the subject &#34;Website Name Suggestion&#34;.</p>
                             </div>
                         </div>
 
                         <div className="mt-8 pt-8 border-t border-border/50">
-                            <Button variant="outline" className="w-full gap-2">
-                                <Mail className="w-4 h-4"/> Email Suggestions
-                            </Button>
+                            <Link href="https://ajaynegi.web.app/contact/" target="_blank"
+                               rel="noopener noreferrer">
+                                <Button className="w-full gap-2 cursor-alias  hover:bg-secondary">
+                                    <Mail className="w-4 h-4"/> Contact Form
+                                </Button>
+                            </Link>
+
                         </div>
                     </motion.div>
 
@@ -133,20 +160,38 @@ export default function Page() {
             </Section>
 
             <Section centered className="bg-muted/20">
-                <h2 className="text-3xl font-serif font-bold mb-6">Contributor Spotlight</h2>
+                <h2 className="text-4xl  text-center font-serif font-bold mb-6">Contributor Spotlight</h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-                    We value every contribution! To celebrate your efforts, we'll feature your name and photo on a
-                    dedicated "Contributors" page, where you'll receive full recognition for your impact.
+                    We value every contribution! To celebrate your efforts, we&#39;ll feature your name and photo on a
+                    dedicated &#34;Contributors&#34; page, where you&#39;ll receive full recognition for your impact.
                 </p>
                 <div className="flex -space-x-4 justify-center">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                        <div key={i}
-                             className="w-12 h-12 rounded-full border-2 border-white bg-gray-200 flex items-center justify-center text-xs text-gray-500">
-                            User
+                    {contributors.slice(0, 9).map((contributor) => (
+                        <div key={contributor.id} className="relative group">
+                            <div
+                                className="w-12 h-12 rounded-full border-2 border-white bg-gray-200 flex items-center justify-center text-xs text-gray-500 overflow-hidden"
+                                aria-hidden="false"
+                            >
+                                <Image
+                                    className="object-cover w-full h-full hover:z-100"
+                                    src={contributor.avatar_url}
+                                    alt={contributor.login}
+                                    width={48}
+                                    height={48}
+                                />
+                            </div>
+
+                            <span
+                                className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 whitespace-nowrap rounded bg-black px-2 py-1 text-xs text-white
+                 opacity-0 scale-95 transition-all duration-150 group-hover:opacity-100 group-hover:scale-100 pointer-events-none z-10"
+                                role="tooltip"
+                            >
+      {contributor.login}
+    </span>
                         </div>
                     ))}
-                    <div
-                        className="w-12 h-12 rounded-full border-2 border-white bg-secondary text-white flex items-center justify-center text-xs font-bold">
+
+                    <div className="w-12 h-12 rounded-full border-2 border-white bg-secondary text-white flex items-center justify-center text-xs font-bold z-50">
                         You?
                     </div>
                 </div>
