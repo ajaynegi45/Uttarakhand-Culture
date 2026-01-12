@@ -1,17 +1,17 @@
 "use client";
 
-import {MouseEvent, useState} from "react";
-import {motion} from "framer-motion";
+import { MouseEvent, useState } from "react";
+import { motion } from "framer-motion";
 // import { useLocation } from "wouter";
-import {useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
 
 interface Props {
     onSelect: (id: string) => void;
 }
 
-const UttarakhandSVGMap = ({onSelect}: Props) => {
+const UttarakhandSVGMap = ({ onSelect }: Props) => {
     const [hovered, setHovered] = useState<{ subdivision: string; district: string } | null>(null);
-    const [mousePos, setMousePos] = useState({x: 0, y: 0});
+    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
     const router = useRouter();
 
@@ -54,7 +54,7 @@ const UttarakhandSVGMap = ({onSelect}: Props) => {
                     districtName = rawDistrict.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
                 }
 
-                setHovered({subdivision: subdivisionName, district: districtName});
+                setHovered({ subdivision: subdivisionName, district: districtName });
             }
         }
     };
@@ -1580,7 +1580,7 @@ const UttarakhandSVGMap = ({onSelect}: Props) => {
                     <g>
                         <polyline
                             className="st12"
-                            points="437.825 511.648 438.255 510.601 436.886 512.821 434.538 517.517 434.303 518.691 434.303 520.101 434.538 523.388 435.242 525.501 435.477 526.44 436.181 527.614 436.886 529.258 437.355 530.666 438.06"
+                            points="437.825 511.648 438.255 510.601 436.886 512.821 434.538 517.517 434.303 518.691 434.303 520.101 434.538 523.388 435.242 525.501 435.477 526.44 436.181 527.614 436.886 529.258 437.355 530.666 438.06 531.136"
                         />
                     </g>
                     <g>
@@ -1853,31 +1853,31 @@ const UttarakhandSVGMap = ({onSelect}: Props) => {
                         className="absolute top-4 right-4 bg-white/60 backdrop-blur-md px-4 py-2 rounded-lg shadow-lg border border-border pointer-events-none animate-in fade-in z-50">
                         <p className="text-sm font-bold text-primary">
                             {hovered.subdivision}
-                            <br/>
+                            <br />
                             <span className="text-xs font-normal text-muted-foreground">
-            Part of {hovered.district} District
-            </span>
-                            <br/>
+                                Part of {hovered.district} District
+                            </span>
+                            <br />
                             <span className="text-xs font-normal text-muted-foreground">Click to explore</span>
                         </p>
                     </div>
                     <motion.div
                         className="absolute top-0 left-0 pointer-events-none text-primary"
-                        initial={{opacity: 0, scale: 0.8, x: mousePos.x - 12, y: mousePos.y - 26}}
-                        animate={{opacity: 1, scale: 1, x: mousePos.x - 12, y: mousePos.y - 26}}
-                        // transition={{
-                        //     x: { type: "spring", stiffness: 200, damping: 20, mass: 0.1 },
-                        //     y: { type: "spring", stiffness: 200, damping: 20, mass: 0.1 },
-                        //     opacity: { duration: 0.1, ease: "easeOut" },
-                        //     scale: { duration: 0.1, ease: "easeOut" }
-                        // }}
+                        initial={{ opacity: 0, scale: 0.8, x: mousePos.x - 12, y: mousePos.y - 26 }}
+                        animate={{ opacity: 1, scale: 1, x: mousePos.x - 12, y: mousePos.y - 26 }}
+                    // transition={{
+                    //     x: { type: "spring", stiffness: 200, damping: 20, mass: 0.1 },
+                    //     y: { type: "spring", stiffness: 200, damping: 20, mass: 0.1 },
+                    //     opacity: { duration: 0.1, ease: "easeOut" },
+                    //     scale: { duration: 0.1, ease: "easeOut" }
+                    // }}
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                             stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                             className="lucide lucide-map-pin-icon lucide-map-pin">
+                            stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                            className="lucide lucide-map-pin-icon lucide-map-pin">
                             <path
-                                d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/>
-                            <circle cx="12" cy="10" r="3"/>
+                                d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                            <circle cx="12" cy="10" r="3" />
                         </svg>
                     </motion.div>
                 </>

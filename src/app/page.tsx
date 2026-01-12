@@ -9,6 +9,10 @@ import templeImg from "@/assets/kedarnath_temple_uttarakhand_culture.webp";
 // import backgroundImg from "@/assets/almora_district_uttarakhand_culture.webp";
 import backgroundImg from "@/assets/background-1_uttarakhand_culture.webp";
 // import backgroundImg from "@/assets/background-2_uttarakhand_culture.jpg";
+// import backgroundImg from "@/assets/background-3_uttarakhand_culture.jpg";
+// import backgroundImg from "@/assets/background-4_uttarakhand_culture.jpg";
+// import backgroundImg from "@/assets/background-5_uttarakhand_culture.jpg";
+// import backgroundImg from "@/assets/background-6_uttarakhand_culture.jpg";
 
 import Section from "@/components/Section";
 import {Button} from "@/components/ui/button";
@@ -31,8 +35,8 @@ export default function Home() {
 
     return (
         <>
-            <div className="relative h-screen w-full overflow-hidden">
-                 {/*Background Image with Parallax feel */}
+            <div className="relative h-screen w-full overflow-hidden select-none">
+                 {/* --- Background Image with Parallax feel --- */}
                 <motion.div
                     className="absolute inset-0 z-0"
                     initial={{scale: 1.5}}
@@ -49,11 +53,9 @@ export default function Home() {
                             className="object-cover home-hero-image"
                             placeholder={"blur"}
                     />
-
                     </div>
-
                     {/* Overlay Gradient */}
-                    <div className="absolute inset-0 bg-linear-to-b from-black/30 via-transparent to-black/60"/>
+                    <div className="absolute inset-0 bg-linear-to-b from-black/30 via-transparent to-black/80"/>
                 </motion.div>
 
 
@@ -108,7 +110,7 @@ export default function Home() {
             </div>
 
 
-            {/* Introduction with Parallax Reveal */}
+            {/* --- Introduction with Parallax Reveal --- */}
             <Section centered className="bg-white relative">
                 <motion.div
                     initial={{opacity: 0, y: 50}}
@@ -132,7 +134,7 @@ export default function Home() {
             </Section>
 
 
-            {/*Festivals • Fairs • Cultural Events*/}
+            {/* --- Festivals • Fairs • Cultural Events --- */}
             <Section pattern className="bg-muted/30">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-12">
@@ -151,7 +153,7 @@ export default function Home() {
             </Section>
 
 
-            {/* Languages Section */}
+            {/* --- Languages Section --- */}
             <Section id="heritage" title="Voices of the Hills" subtitle="Our Languages" className="bg-white">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {[
@@ -204,7 +206,7 @@ export default function Home() {
             </Section>
 
 
-            {/* Folklore Section - Parallax Reveal Style */}
+            {/* --- Folklore Section - Parallax Reveal Style --- */}
             <Section id="stories" title="Echoes of the Past" subtitle="Folklore & Legends">
                 <div className="relative">
                     <div className="flex flex-col md:flex-row gap-12 items-center">
@@ -264,7 +266,7 @@ export default function Home() {
             </Section>
 
 
-            {/* Culture Showcase (Masonry Grid) */}
+            {/* --- Culture Showcase (Masonry Grid) --- */}
             <Section id="culture" title="Living Traditions" subtitle="Culture & Lifestyle" className={"mb-20"}>
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:auto-rows-[300px]">
 
@@ -359,7 +361,6 @@ export default function Home() {
                             </div>
                         </Link>
                     </motion.div>
-
                 </div>
             </Section>
         </>
