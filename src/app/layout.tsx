@@ -6,6 +6,8 @@ import Footer from "@/components/Footer";
 import {ClerkProvider,} from '@clerk/nextjs';
 import React, {Suspense} from 'react';
 import Image from "next/image";
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const dmSans = DM_Sans({
     subsets: ["latin"],
@@ -39,6 +41,8 @@ export default function RootLayout({ children }: Readonly <{ children: React.Rea
                     <Image src="/Mountain.svg" alt="Loading..." width={120} height={120} priority fetchPriority={"high"} />
                 </div>}>
                 {children}
+                <Analytics />
+                <SpeedInsights />
             </Suspense>
             <Footer/>
             </body>
