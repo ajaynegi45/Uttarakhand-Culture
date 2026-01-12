@@ -1,7 +1,7 @@
 "use client";
 
 import Section from "@/components/Section";
-import {motion} from "framer-motion";
+import { motion } from "motion/react"
 import {Globe, Heart, Mountain, Users} from "lucide-react";
 import {useRouter} from "next/navigation";
 import Link from "next/link";

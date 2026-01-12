@@ -1,7 +1,7 @@
 "use client";
 
 import {useState} from "react";
-import {motion} from "framer-motion";
+import { motion } from "motion/react"
 import Section from "@/components/Section";
 import {temples} from "@/data/temples";
 import {Button} from "@/components/ui/button";

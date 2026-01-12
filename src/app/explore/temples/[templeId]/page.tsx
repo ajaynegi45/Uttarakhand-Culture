@@ -2,7 +2,7 @@
 
 import {temples} from "@/data/temples";
 import Section from "@/components/Section";
-import {motion} from "framer-motion";
+import { motion } from "motion/react"
 import {ArrowLeft, Building2, Calendar, Eye, Flame, MapPin} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import {useParams} from "next/navigation";

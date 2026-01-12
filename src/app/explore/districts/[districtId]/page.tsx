@@ -6,7 +6,7 @@ import {districts} from "@/data/districts";
 import {Button} from "@/components/ui/button";
 import {ArrowLeft, BookOpen, Landmark, MapPin, Mountain, TrendingUp} from "lucide-react";
 import Link from "next/link";
-import {motion} from "framer-motion";
+import { motion } from "motion/react"
 import Image from "next/image";
 import DistrictTehsilMap from "@/components/DistrictTehsilMap";
 

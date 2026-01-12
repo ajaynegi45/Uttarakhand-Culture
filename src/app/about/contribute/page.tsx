@@ -3,7 +3,7 @@
 import Section from "@/components/Section";
 import {Button} from "@/components/ui/button";
 import {Code, Github, Mail, PenTool} from "lucide-react";
-import {motion} from "framer-motion";
+import { motion } from "motion/react"
 import { fetchContributors, Contributor } from "@/data/github";
 import {useEffect, useState} from "react";
 import Image from "next/image";

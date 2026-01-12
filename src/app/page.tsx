@@ -23,7 +23,7 @@ import Link from "next/link";
 import Image from 'next/image';
 import {useRouter} from "next/navigation";
 
-import {motion} from "framer-motion";
+import { motion } from "motion/react"
 import {ArrowDown, ArrowRight, Sparkles} from "lucide-react";
 import ArrowFollowTarget from "@/components/ui/ArrowFollowTarget";
 

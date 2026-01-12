@@ -3,7 +3,7 @@
 import Section from "@/components/Section";
 import {Button} from "@/components/ui/button";
 import {Code, Coffee, Heart, Server, Shield} from "lucide-react";
-import {motion} from "framer-motion";
+import { motion } from "motion/react"
 import Link from "next/link";
 
 export default function Support() {

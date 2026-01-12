@@ -5,7 +5,7 @@ import {Button} from "@/components/ui/button";
 import {ArrowLeft, ChefHat, Clock, Users} from "lucide-react";
 import Image from 'next/image';
 import Link from "next/link";
-import {motion} from "framer-motion";
+import { motion } from "motion/react"
 import alooImg from "@/assets/aloo_ke_gutke_recipes_uttarakhand_culture.webp";
 
 export default function Page() {
